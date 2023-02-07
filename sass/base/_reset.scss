@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    vertical-align: baseline;
+    overflow-x: hidden;
+
+    /* Include media queries for font size here */
+}
+
+body {
+    box-sizing: border-box;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a,
+a:active,
+a:hover,
+a:visited {
+    text-decoration: none;
+    color: black;
+}
