@@ -1,0 +1,127 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  vertical-align: baseline;
+  overflow-x: hidden;
+  /* Include media queries for font size here */ }
+
+body {
+  box-sizing: border-box;
+  background-color: #000; }
+
+footer,
+header,
+nav,
+section,
+main {
+  display: block; }
+
+ol,
+ul {
+  list-style: none; }
+
+a,
+a:active,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: #fff; }
+
+body {
+  font-family: 'Alumni Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: .15rem;
+  word-spacing: .2rem;
+  color: #fff; }
+
+.heading-primary {
+  color: #fff;
+  font-weight: 400; }
+  .heading-primary--main {
+    display: block;
+    text-transform: uppercase;
+    font-size: 6rem;
+    letter-spacing: 1rem; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 3.6rem;
+    letter-spacing: .3rem; }
+  .heading-primary--title {
+    display: block;
+    color: #b10c0c;
+    text-transform: uppercase;
+    font-size: 8rem;
+    font-weight: 800; }
+
+.heading-secondary {
+  color: #fff;
+  font-weight: 400;
+  font-size: 2.4rem;
+  letter-spacing: .2rem; }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: .35;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
+.mobsters {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 2rem auto; }
+
+.header {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 7rem); }
+  .header__text-box {
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%); }
+  .header__img {
+    margin-top: 2rem;
+    width: 90%; }
+  .header__title-lower {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%); }
+
+.navigation {
+  position: relative;
+  background-color: #252525;
+  width: 100%;
+  height: 7rem;
+  font-size: 2.2rem; }
+  .navigation__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%; }
+  .navigation__link {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-bottom: 2px solid transparent; }
+  .navigation__link:hover, .navigation__link:active {
+    border-bottom: 2px solid #fff; }

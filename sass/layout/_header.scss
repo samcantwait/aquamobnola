@@ -1,0 +1,26 @@
+.header {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 7rem);
+
+    &__text-box {
+        display: block;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+    }
+
+    &__img {
+        margin-top: 2rem;
+        width: 90%;
+    }
+
+    &__title-lower {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,27 @@
+.navigation {
+    position: relative;
+    background-color: $color-grey-dark;
+    width: 100%;
+    height: 7rem;
+    font-size: 2.2rem;
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__link {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-bottom: 2px solid transparent;
+    }
+
+    &__link:hover,
+    &__link:active {
+        border-bottom: 2px solid $color-white;
+    }
+}

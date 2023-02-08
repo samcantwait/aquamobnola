@@ -16,6 +16,7 @@ html {
 
 body {
     box-sizing: border-box;
+    background-color: $color-black;
 }
 
 footer,
@@ -36,5 +37,5 @@ a:active,
 a:hover,
 a:visited {
     text-decoration: none;
-    color: black;
+    color: $color-white;
 }
