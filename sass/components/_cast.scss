@@ -1,0 +1,58 @@
+.cast {
+    width: 75%;
+    margin: auto;
+    min-height: 22rem;
+    padding: 2rem;
+    box-shadow: 3px 3px 10px -4px rgba($color-white, .8);
+    background-color: rgba($color-black, .4);
+    transform: skewX(-12deg);
+
+    &>* {
+        transform: skewX(12deg);
+    }
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        margin: 2rem;
+        float: left;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        shape-outside: circle(50%);
+    }
+
+    &__img {
+        height: 100%;
+        width: 100%;
+        transform: scale(1.2);
+        transition: all .5s;
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 2.3rem;
+        font-weight: 400;
+        transform: translate(-50%, 20%);
+        opacity: 0;
+        transition: all .5s;
+    }
+
+    &:hover &__img {
+        transform: scale(1.6);
+        filter: blur(3px) brightness(80%);
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &__more:hover,
+    &__more:active {
+        text-decoration: underline;
+        text-underline-offset: .8rem;
+    }
+}
