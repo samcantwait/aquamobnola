@@ -9,12 +9,12 @@ html {
   font-size: 62.5%;
   vertical-align: baseline;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   /* Include media queries for font size here */ }
 
 body {
   box-sizing: border-box;
-  background-color: #000;
-  scroll-behavior: smooth; }
+  background-color: #000; }
 
 footer,
 header,
@@ -87,6 +87,11 @@ body {
 .mt-large {
   margin-top: 8rem !important; }
 
+.btn-more:hover,
+.btn-more:active {
+  text-decoration: underline;
+  text-underline-offset: .8rem; }
+
 .bg-video {
   position: absolute;
   top: 0;
@@ -94,7 +99,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: .3;
+  opacity: .25;
   overflow: hidden; }
   .bg-video__content {
     height: 100%;
@@ -140,9 +145,58 @@ body {
   .cast:hover .cast__caption {
     opacity: 1;
     transform: translate(-50%, -50%); }
-  .cast__more:hover, .cast__more:active {
-    text-decoration: underline;
-    text-underline-offset: .8rem; }
+
+.gallery__grid {
+  width: 85%;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 5vw);
+  gap: 1rem; }
+
+.gallery__item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #fff;
+  transition: all .5s; }
+  .gallery__item:hover {
+    transform: scale(1.7); }
+  .gallery__item--1 {
+    grid-area: 1 / 1 / 5 / 3; }
+  .gallery__item--2 {
+    grid-area: 4 / 4 / 8 / 6; }
+  .gallery__item--3 {
+    grid-area: 3 / 3 / 5 / 4; }
+    .gallery__item--3:hover {
+      transform: scale(2.5); }
+  .gallery__item--4 {
+    grid-area: 1 / 5 / 4 / 6; }
+  .gallery__item--5 {
+    grid-area: 1 / 3 / 3 /5; }
+  .gallery__item--6 {
+    grid-area: 5 / 1 / 8 / 4;
+    object-position: top; }
+    .gallery__item--6:hover {
+      transform: scale(1.5); }
+  .gallery__item--7 {
+    grid-area: 6 / 6 / 8 / 8; }
+    .gallery__item--7:hover {
+      transform: scale(2); }
+  .gallery__item--8 {
+    grid-area: 3 / 4 / 4 / 5; }
+    .gallery__item--8:hover {
+      transform: scale(3.5); }
+  .gallery__item--9 {
+    grid-area: 3 / 6 / 6 / 9; }
+    .gallery__item--9:hover {
+      transform: scale(1.4); }
+  .gallery__item--10 {
+    grid-area: 6 / 8 / 8 / 9; }
+  .gallery__item--11 {
+    grid-area: 1 / 6 / 3 / 7; }
+  .gallery__item--12 {
+    grid-area: 1 / 7 / 3 / 9; }
 
 .header {
   position: relative;
@@ -166,7 +220,7 @@ body {
 
 .navigation {
   position: relative;
-  background-color: #252525;
+  background-color: #141313;
   width: 100%;
   height: 7rem;
   font-size: 2.2rem; }
@@ -186,7 +240,13 @@ body {
 
 .mobsters {
   position: relative;
-  width: 100%;
   font-size: 2rem;
   font-weight: 200;
-  margin: 2rem auto; }
+  margin: 2rem; }
+
+.gallery {
+  position: relative;
+  width: 100%;
+  padding: 4rem;
+  font-size: 2rem;
+  font-weight: 200; }

@@ -49,10 +49,4 @@
         opacity: 1;
         transform: translate(-50%, -50%);
     }
-
-    &__more:hover,
-    &__more:active {
-        text-decoration: underline;
-        text-underline-offset: .8rem;
-    }
 }

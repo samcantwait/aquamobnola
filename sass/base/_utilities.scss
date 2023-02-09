@@ -11,3 +11,9 @@
 .mt-large {
     margin-top: 8rem !important;
 }
+
+.btn-more:hover,
+.btn-more:active {
+    text-decoration: underline;
+    text-underline-offset: .8rem;
+}
