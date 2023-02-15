@@ -1,14 +1,13 @@
-.mobsters {
-    position: relative;
-    font-size: 2rem;
-    font-weight: 200;
-    margin: 2rem;
+section {
+    margin: 0 2rem;
+}
+
+.happenings {
+    height: 100vh;
+    background-image: radial-gradient(circle at 10% 20%, $color-black 50%, $color-grey-mid);
 }
 
 .gallery {
-    position: relative;
-    width: 100%;
     padding: 4rem;
-    font-size: 2rem;
-    font-weight: 200;
+    background-image: radial-gradient(circle at 90% 80%, $color-black , $color-grey-mid);
 }

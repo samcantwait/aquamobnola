@@ -1,0 +1,36 @@
+.bloody {
+    position: absolute;
+    top: -7rem;
+    width: 100%;
+    height: 100vh;
+    border-bottom: 4px solid transparent;
+    filter: url('../index.html#noise');
+    animation: borderVisible 1s 15s forwards;
+
+    &__filter {
+        display: none;
+    }
+
+    &__canvas {
+        position: absolute;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        filter: url('../index.html#noise') blur(1px) contrast(1.6);
+    }
+
+    &__stop {
+        opacity: 0;
+        z-index: 10000;
+        position: absolute;
+        font-size: 1.6rem;
+        bottom: 2rem;
+        right: 2rem;
+        padding: 2rem;
+        color: white;
+        border: 2px solid white;
+        background-color: rgba($color-red-dark, .7);
+        border-radius: 1000px;
+        animation: makeVisible 1s 11s forwards;
+    }
+}

@@ -1,3 +1,15 @@
+@keyframes makeVisible {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes borderVisible {
+  0% {
+    border-bottom: 4px solid transparent; }
+  100% {
+    border-bottom: 4px solid #b10c0c; } }
+
 *,
 *::after,
 *::before {
@@ -8,13 +20,15 @@
 html {
   font-size: 62.5%;
   vertical-align: baseline;
-  overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow-x: hidden;
   /* Include media queries for font size here */ }
 
 body {
   box-sizing: border-box;
-  background-color: #000; }
+  background-color: #000;
+  width: 100%;
+  overflow-x: hidden; }
 
 footer,
 header,
@@ -41,6 +55,11 @@ body {
   letter-spacing: .15rem;
   word-spacing: .2rem;
   color: #fff; }
+
+section {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 200; }
 
 .heading-primary {
   color: #fff;
@@ -106,45 +125,35 @@ body {
     width: 100%;
     object-fit: cover; }
 
-.cast {
-  width: 75%;
-  margin: auto;
-  min-height: 22rem;
-  padding: 2rem;
-  box-shadow: 3px 3px 10px -4px rgba(255, 255, 255, 0.8);
-  background-color: rgba(0, 0, 0, 0.4);
-  transform: skewX(-12deg); }
-  .cast > * {
-    transform: skewX(12deg); }
-  .cast__shape {
-    width: 15rem;
-    height: 15rem;
-    margin: 2rem;
-    float: left;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    shape-outside: circle(50%); }
-  .cast__img {
-    height: 100%;
-    width: 100%;
-    transform: scale(1.2);
-    transition: all .5s; }
-  .cast__caption {
+.bloody {
+  position: absolute;
+  top: -7rem;
+  width: 100%;
+  height: 100vh;
+  border-bottom: 4px solid transparent;
+  filter: url("../index.html#noise");
+  animation: borderVisible 1s 15s forwards; }
+  .bloody__filter {
+    display: none; }
+  .bloody__canvas {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 2.3rem;
-    font-weight: 400;
-    transform: translate(-50%, 20%);
+    top: 0;
+    margin: 0;
+    padding: 0;
+    filter: url("../index.html#noise") blur(1px) contrast(1.6); }
+  .bloody__stop {
     opacity: 0;
-    transition: all .5s; }
-  .cast:hover .cast__img {
-    transform: scale(1.6);
-    filter: blur(3px) brightness(80%); }
-  .cast:hover .cast__caption {
-    opacity: 1;
-    transform: translate(-50%, -50%); }
+    z-index: 10000;
+    position: absolute;
+    font-size: 1.6rem;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 2rem;
+    color: white;
+    border: 2px solid white;
+    background-color: rgba(177, 12, 12, 0.7);
+    border-radius: 1000px;
+    animation: makeVisible 1s 11s forwards; }
 
 .gallery__grid {
   width: 85%;
@@ -198,6 +207,50 @@ body {
   .gallery__item--12 {
     grid-area: 1 / 7 / 3 / 9; }
 
+.happenings__text {
+  width: 75%;
+  margin: auto; }
+
+.cast {
+  width: 75%;
+  margin: auto;
+  min-height: 22rem;
+  padding: 2rem;
+  box-shadow: 3px 3px 10px -4px rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: skewX(-12deg); }
+  .cast > * {
+    transform: skewX(12deg); }
+  .cast__shape {
+    width: 15rem;
+    height: 15rem;
+    margin: 2rem;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    shape-outside: circle(50%); }
+  .cast__img {
+    height: 100%;
+    width: 100%;
+    transform: scale(1.2);
+    transition: all .5s; }
+  .cast__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2.3rem;
+    font-weight: 400;
+    transform: translate(-50%, 20%);
+    opacity: 0;
+    transition: all .5s; }
+  .cast:hover .cast__img {
+    transform: scale(1.6);
+    filter: blur(3px) brightness(80%); }
+  .cast:hover .cast__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+
 .header {
   position: relative;
   width: 100%;
@@ -220,10 +273,11 @@ body {
 
 .navigation {
   position: relative;
-  background-color: #141313;
+  background-color: #181515;
   width: 100%;
   height: 7rem;
-  font-size: 2.2rem; }
+  font-size: 2.2rem;
+  z-index: 2; }
   .navigation__list {
     display: flex;
     justify-content: space-around;
@@ -238,15 +292,13 @@ body {
   .navigation__link:hover, .navigation__link:active {
     border-bottom: 2px solid #fff; }
 
-.mobsters {
-  position: relative;
-  font-size: 2rem;
-  font-weight: 200;
-  margin: 2rem; }
+section {
+  margin: 0 2rem; }
+
+.happenings {
+  height: 100vh;
+  background-image: radial-gradient(circle at 10% 20%, #000 50%, #181616); }
 
 .gallery {
-  position: relative;
-  width: 100%;
   padding: 4rem;
-  font-size: 2rem;
-  font-weight: 200; }
+  background-image: radial-gradient(circle at 90% 80%, #000, #181616); }

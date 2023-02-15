@@ -10,13 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@200;300;400;600;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/blood.js" defer></script>
     <title>Aquamob NOLA</title>
 </head>
 
 <body>
     <nav class="navigation">
         <ul class="navigation__list">
-            <li class="navigation__item"><a href="#now" class="navigation__link">Happening Now</a></li>
+            <li class="navigation__item"><a href="#happenings" class="navigation__link">Happening Now</a></li>
             <li class="navigation__item"><a href="#mobsters" class="navigation__link">Meet the Mobsters</a></li>
             <li class="navigation__item"><a href="#gallery" class="navigation__link">Photo Gallery</a></li>
             <li class="navigation__item"><a href="#tickets" class="navigation__link">Tickets</a></li>
@@ -24,6 +25,17 @@
         </ul>
     </nav>
     <header class="header">
+        <div class="bloody">
+            <svg class="bloody__filter">
+                <filter id="noise">
+                    <feTurbulence baseFrequency="0.5" type="fractalNoise" result="turbNoise" />
+                    <feDisplacementMap in="SourceGraphic" in2="turbNoise" xChannelSelector="G" yChannelSelector="B"
+                        scale="4" result="disp" />
+                </filter>
+            </svg>
+            <canvas class="bloody__canvas"></canvas>
+            <button class="bloody__stop">Stop the blood already!</button>
+        </div>
         <div class="header__text-box">
             <h1 class="heading-primary">
                 <span class="heading-primary--main">aquamob nola</span>
@@ -33,12 +45,13 @@
         </div>
         <h1 class="heading-primary--lower header__title-lower">a water ballet</h1>
     </header>
-    <section id="now" class="now">
+    <section id="happenings" class="happenings">
         <div class="center-text mb-large">
             <h2 class="heading-secondary">Happening Now</h2>
         </div>
-        <div class="now__text">
-            <p class="now__intro">It's official! We're back for a 5th year; here to interpret another iconic film into
+        <div class="happenings__text">
+            <p class="happenings__intro">It's official! We're back for a 5th year; here to interpret another iconic film
+                into
                 an entertaining water ballet.</p>
         </div>
     </section>
