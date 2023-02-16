@@ -95,6 +95,10 @@ section {
   font-weight: 400;
   font-size: 3rem; }
 
+.heading-quaternary {
+  font-weight: 600;
+  font-size: 2.2rem; }
+
 .center-text {
   display: inline-block;
   width: 100%;
@@ -208,9 +212,31 @@ section {
   .gallery__item--12 {
     grid-area: 1 / 7 / 3 / 9; }
 
+.happenings__intro {
+  text-align: center; }
+
 .happenings__text {
   width: 75%;
   margin: auto; }
+
+.happenings__list {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: auto; }
+
+.happenings__item {
+  display: block;
+  margin: 2rem 0; }
+
+.happenings__heading {
+  display: inline-block;
+  margin-right: 2rem; }
+
+.happenings__footer {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 200; }
 
 .cast {
   width: 75%;

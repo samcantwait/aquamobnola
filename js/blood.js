@@ -30,7 +30,7 @@ class Blood {
 
 const setX = () => Math.random() * width;
 const setY = () => Math.random() * -1000;
-const setRadius = () => Math.random() * 7;
+const setRadius = () => Math.random() * 10;
 const setSpeed = () => Math.random() * 3.5;
 
 let myReq;
