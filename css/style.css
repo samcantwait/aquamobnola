@@ -104,6 +104,9 @@ section {
   width: 100%;
   text-align: center !important; }
 
+.mb-medium {
+  margin-bottom: 4rem !important; }
+
 .mb-large {
   margin-bottom: 8rem !important; }
 
@@ -167,6 +170,14 @@ section {
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(7, 5vw);
   gap: 1rem; }
+
+.gallery__text {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 3rem;
+  margin: 2rem; }
 
 .gallery__item {
   width: 100%;
@@ -324,7 +335,6 @@ section {
   margin: 0 2rem; }
 
 .happenings {
-  height: 100vh;
   background-image: radial-gradient(circle at 10% 20%, #000 50%, #181616); }
 
 .gallery {
