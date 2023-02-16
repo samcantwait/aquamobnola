@@ -80,7 +80,7 @@ section {
     font-size: 8rem;
     font-weight: 800; }
   .heading-primary--lower {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     letter-spacing: .2rem;
     font-weight: inherit; }
 
@@ -131,16 +131,17 @@ section {
   width: 100%;
   height: 100vh;
   border-bottom: 4px solid transparent;
-  filter: url("../index.html#noise");
   animation: borderVisible 1s 15s forwards; }
   .bloody__filter {
-    display: none; }
+    position: absolute;
+    height: 100%;
+    width: 100%; }
   .bloody__canvas {
     position: absolute;
     top: 0;
     margin: 0;
     padding: 0;
-    filter: url("../index.html#noise") blur(1px) contrast(1.6); }
+    filter: blur(1px) contrast(1.6); }
   .bloody__stop {
     opacity: 0;
     z-index: 10000;
@@ -150,10 +151,10 @@ section {
     right: 2rem;
     padding: 2rem;
     color: white;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.7);
     background-color: rgba(177, 12, 12, 0.7);
     border-radius: 1000px;
-    animation: makeVisible 1s 11s forwards; }
+    animation: makeVisible 1s 15s forwards; }
 
 .gallery__grid {
   width: 85%;

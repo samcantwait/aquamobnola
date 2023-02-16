@@ -72,9 +72,9 @@ function createBlood() {
 createBlood();
 
 function bleed() {
-    const firstDripsDelay = setInterval(function () { animate(firstDrips, firstDripsDelay) }, 2000);
-    const secondDripsDelay = setInterval(function () { animate(secondDrips, secondDripsDelay) }, 5000);
-    const allDripsDelay = setInterval(function () { animate(allDrips, allDripsDelay) }, 10000);
+    const firstDripsDelay = setInterval(function () { animate(firstDrips, firstDripsDelay) }, 1000);
+    const secondDripsDelay = setInterval(function () { animate(secondDrips, secondDripsDelay) }, 4000);
+    const allDripsDelay = setInterval(function () { animate(allDrips, allDripsDelay) }, 9000);
 }
 bleed();
 
@@ -92,7 +92,7 @@ stopBlood.addEventListener('click', () => {
         cancelAnimationFrame(secondDrips.myReq);
         cancelAnimationFrame(allDrips.myReq);
         canvas.style.display = 'none';
-        stopBlood.innerText = 'Restart';
+        stopBlood.innerText = 'Make it bleed';
     }
     clicked = clicked === false ? true : false;
     console.log('clicked: ', clicked);
