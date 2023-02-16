@@ -1,5 +1,13 @@
 .happenings {
 
+    &__card {
+        width: 25%;
+        background-color: #151515;
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: 1.6rem;
+    }
+
     &__intro {
         text-align: center;
     }

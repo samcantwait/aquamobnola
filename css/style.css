@@ -27,7 +27,6 @@ html {
 body {
   box-sizing: border-box;
   background-color: #000;
-  width: 100%;
   overflow-x: hidden; }
 
 footer,
@@ -57,6 +56,7 @@ body {
   color: #fff; }
 
 section {
+  font-family: 'Roboto', sans-serif;
   position: relative;
   font-size: 2rem;
   font-weight: 200; }
@@ -75,7 +75,7 @@ section {
     letter-spacing: .3rem; }
   .heading-primary--title {
     display: block;
-    color: #b10c0c;
+    color: #3d0000;
     text-transform: uppercase;
     font-size: 8rem;
     font-weight: 800; }
@@ -159,7 +159,7 @@ section {
     padding: 2rem;
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.7);
-    background-color: rgba(177, 12, 12, 0.7);
+    background-color: rgba(120, 0, 0, 0.7);
     border-radius: 1000px;
     animation: makeVisible 1s 15s forwards; }
 
@@ -223,6 +223,13 @@ section {
   .gallery__item--12 {
     grid-area: 1 / 7 / 3 / 9; }
 
+.happenings__card {
+  width: 25%;
+  background-color: #151515;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.6rem; }
+
 .happenings__intro {
   text-align: center; }
 
@@ -267,7 +274,7 @@ section {
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-    shape-outside: circle(50%); }
+    shape-outside: circle(48.3%); }
   .cast__img {
     height: 15rem;
     width: 15rem;
@@ -277,7 +284,7 @@ section {
   .cast__caption {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 55%;
     font-size: 2.3rem;
     font-weight: 400;
     transform: translate(-50%, 20%);
@@ -312,7 +319,7 @@ section {
 
 .navigation {
   position: relative;
-  background-color: #181515;
+  background-color: #131316;
   width: 100%;
   height: 7rem;
   font-size: 2.2rem;
@@ -332,11 +339,11 @@ section {
     border-bottom: 2px solid #fff; }
 
 section {
-  margin: 0 2rem; }
+  margin: 0; }
 
 .happenings {
-  background-image: radial-gradient(circle at 10% 20%, #000 50%, #181616); }
+  background-color: #242424; }
 
 .gallery {
   padding: 4rem;
-  background-image: radial-gradient(circle at 90% 80%, #000, #181616); }
+  background-color: #1c1c21; }
