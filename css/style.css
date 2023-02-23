@@ -223,38 +223,66 @@ section {
   .gallery__item--12 {
     grid-area: 1 / 7 / 3 / 9; }
 
-.happenings__card {
-  width: 25%;
-  background-color: #151515;
-  padding: 1rem;
-  border-radius: 1rem;
-  font-size: 1.6rem; }
-
-.happenings__intro {
-  text-align: center; }
-
-.happenings__text {
-  width: 75%;
-  margin: auto; }
-
-.happenings__list {
-  display: block;
-  width: max-content;
-  max-width: 100%;
-  margin: auto; }
-
-.happenings__item {
-  display: block;
-  margin: 2rem 0; }
-
-.happenings__heading {
-  display: inline-block;
-  margin-right: 2rem; }
-
-.happenings__footer {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 200; }
+.happenings {
+  font-family: 'Roboto', sans-serif;
+  width: 100%; }
+  .happenings__intro {
+    display: block;
+    text-align: center;
+    font-size: 2rem; }
+  .happenings__container {
+    max-width: 72%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin: auto; }
+  .happenings__event {
+    min-width: 20rem;
+    border-left: 1px solid currentColor; }
+    .happenings__event--1 {
+      color: #8a0505; }
+    .happenings__event--2 {
+      color: #043b68; }
+    .happenings__event--3 {
+      color: #741450; }
+    .happenings__event--4 {
+      color: #923812; }
+    .happenings__event--5 {
+      color: #025a54; }
+  .happenings__date {
+    color: currentColor;
+    display: inline-block; }
+    .happenings__date--day {
+      float: left;
+      font-size: 5rem;
+      font-weight: 300;
+      padding-left: 1rem; }
+    .happenings__date--year {
+      display: inline-block;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      width: 10rem;
+      padding: 1rem; }
+  .happenings__image-container {
+    width: 100%; }
+  .happenings__image {
+    width: 100%;
+    border-top: 1px solid currentColor;
+    border-bottom: 1px solid currentColor; }
+  .happenings__text {
+    font-size: 1.4rem;
+    color: #777;
+    font-family: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 1rem; }
+  .happenings__heading {
+    display: inline-block;
+    margin-right: 2rem; }
+  .happenings__footer {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 200; }
 
 .cast {
   width: 75%;
@@ -296,6 +324,8 @@ section {
   .cast:hover .cast__caption {
     opacity: 1;
     transform: translate(-50%, -50%); }
+  .cast__text {
+    font-size: 1.6rem; }
 
 .header {
   position: relative;
@@ -342,8 +372,8 @@ section {
   margin: 0; }
 
 .happenings {
-  background-color: #242424; }
+  background-color: #131316; }
 
 .gallery {
   padding: 4rem;
-  background-color: #1c1c21; }
+  background-color: #111111; }

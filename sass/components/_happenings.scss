@@ -1,32 +1,83 @@
 .happenings {
-
-    &__card {
-        width: 25%;
-        background-color: #151515;
-        padding: 1rem;
-        border-radius: 1rem;
-        font-size: 1.6rem;
-    }
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
 
     &__intro {
+        display: block;
         text-align: center;
+        font-size: 2rem;
+    }
+
+    &__container {
+        max-width: 72%;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    &__event {
+        min-width: 20rem;
+        border-left: 1px solid currentColor;
+
+        &--1 {
+            color: $color-red;
+        }
+
+        &--2 {
+            color: $color-blue;
+        }
+
+        &--3 {
+            color: $color-purple;
+        }
+
+        &--4 {
+            color: $color-orange;
+        }
+
+        &--5 {
+            color: $color-green;
+        }
+    }
+
+    &__date {
+        color: currentColor;
+        display: inline-block;
+
+        &--day {
+            float: left;
+            font-size: 5rem;
+            font-weight: 300;
+            padding-left: 1rem;
+        }
+
+        &--year {
+            display: inline-block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            width: 10rem;
+            padding: 1rem;
+        }
+    }
+
+    &__image-container {
+        width: 100%;
+    }
+
+    &__image {
+        width: 100%;
+        border-top: 1px solid currentColor;
+        border-bottom: 1px solid currentColor;
     }
 
     &__text {
-        width: 75%;
-        margin: auto;
-    }
-
-    &__list {
-        display: block;
-        width: max-content;
-        max-width: 100%;
-        margin: auto;
-    }
-
-    &__item {
-        display: block;
-        margin: 2rem 0;
+        font-size: 1.4rem;
+        color: $grey-font;
+        font-family: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        padding: 1rem;
     }
 
     &__heading {

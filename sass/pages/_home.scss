@@ -4,11 +4,11 @@ section {
 
 .happenings {
     // background-image: radial-gradient(circle at 10% 20%, $color-black 50%, $color-grey-mid);
-    background-color: #242424;
+    background-color: $color-grey-dark;
 }
 
 .gallery {
     padding: 4rem;
     // background-image: radial-gradient(circle at 90% 80%, $color-black , $color-grey-mid);
-    background-color: $color-grey-mid;
+    background-color: $color-grey-darkest;
 }

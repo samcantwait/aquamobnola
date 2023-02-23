@@ -7,9 +7,6 @@
     background-color: rgba($color-black, .4);
     transform: skewX(-12deg);
 
-
-
-
     &>* {
         transform: skewX(12deg);
     }
@@ -52,5 +49,9 @@
     &:hover &__caption {
         opacity: 1;
         transform: translate(-50%, -50%);
+    }
+
+    &__text {
+        font-size: 1.6rem;
     }
 }
