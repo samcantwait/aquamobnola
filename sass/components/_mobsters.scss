@@ -6,6 +6,7 @@
     box-shadow: 3px 3px 10px -4px rgba($color-white, .8);
     background-color: rgba($color-black, .4);
     transform: skewX(-12deg);
+    position: relative;
 
     &>* {
         transform: skewX(12deg);

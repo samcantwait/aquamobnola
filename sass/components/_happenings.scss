@@ -8,17 +8,40 @@
         font-size: 2rem;
     }
 
+    &__btn {
+        position: absolute;
+        top: 50%;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        font-size: 3.5rem;
+        background-color: $color-grey-light;
+        color: $color-white;
+        border: none;
+
+        &--left {
+            left: calc(14% - 6rem);
+        }
+
+        &--right {
+            right: calc(14% - 6rem);
+        }
+    }
+
     &__container {
         max-width: 72%;
         height: auto;
         display: flex;
-        justify-content: flex-start;
+        flex-wrap: nowrap;
+        flex-direction: row;
         overflow: hidden;
         margin: auto;
+        position: relative;
     }
 
     &__event {
-        min-width: 20rem;
+        display: inline-block;
+        // flex: 1 0 25%;
         border-left: 1px solid currentColor;
 
         &--1 {

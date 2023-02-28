@@ -2,12 +2,18 @@ const canvas = document.querySelector(".bloody__canvas");
 const ctx = canvas.getContext("2d");
 
 const bloodyDiv = document.querySelector('.bloody');
-const stopBlood = document.querySelector('.bloody__stop');
-const height = bloodyDiv.offsetHeight;
-const width = bloodyDiv.offsetWidth;
-console.log(height, width)
-canvas.height = height;
-canvas.width = width;
+const bloodBtn = document.querySelector('.bloody__stop');
+
+let height, width;
+
+function createCanvas() {
+    console.log('create')
+    height = bloodyDiv.offsetHeight;
+    width = bloodyDiv.offsetWidth;
+    canvas.height = height;
+    canvas.width = width;
+}
+createCanvas();
 
 class Blood {
     constructor(x, y, radius, speed) {
@@ -28,10 +34,6 @@ class Blood {
     }
 }
 
-const setX = () => Math.random() * width;
-const setY = () => Math.random() * -1000;
-const setRadius = () => Math.random() * 8;
-const setSpeed = () => Math.random() * 3.5;
 
 let myReq;
 const animate = (drips, animationName) => {
@@ -53,6 +55,12 @@ const animate = (drips, animationName) => {
 
 let allDrips, firstDrips, secondDrips;
 function createBlood() {
+
+    const setX = () => Math.random() * width;
+    const setY = () => Math.random() * -1000;
+    const setRadius = () => Math.random() * 8;
+    const setSpeed = () => Math.random() * 3.5;
+
     allDrips = [];
     firstDrips = [
         new Blood(width / 3, 0, 4, .5),
@@ -71,30 +79,46 @@ function createBlood() {
 };
 createBlood();
 
+let firstDripsDelay, secondDripsDelay, allDripsDelay;
 function bleed() {
-    const firstDripsDelay = setInterval(function () { animate(firstDrips, firstDripsDelay) }, 1000);
-    const secondDripsDelay = setInterval(function () { animate(secondDrips, secondDripsDelay) }, 4000);
-    const allDripsDelay = setInterval(function () { animate(allDrips, allDripsDelay) }, 9000);
+    firstDripsDelay = setInterval(function () { animate(firstDrips, firstDripsDelay) }, 1000);
+    secondDripsDelay = setInterval(function () { animate(secondDrips, secondDripsDelay) }, 4000);
+    allDripsDelay = setInterval(function () { animate(allDrips, allDripsDelay) }, 9000);
 }
 bleed();
 
+function startBlood() {
+    console.log('start')
+    ctx.clearRect(0, 0, width, height);
+    canvas.style.display = 'block';
+    createBlood();
+    bleed();
+    bloodBtn.innerText = 'Stop the blood!';
+}
+
+function stopBlood() {
+    console.log('stop')
+    cancelAnimationFrame(firstDrips.myReq);
+    cancelAnimationFrame(secondDrips.myReq);
+    cancelAnimationFrame(allDrips.myReq);
+    canvas.style.display = 'none';
+    bloodBtn.innerText = 'Make it bleed';
+}
+
 let clicked = false;
-stopBlood.addEventListener('click', () => {
-    if (clicked === true) {
-        ctx.clearRect(0, 0, width, height);
-        canvas.style.display = 'block';
-        createBlood();
-        bleed();
-        stopBlood.innerText = 'Stop the blood!';
-
-    } else {
-        cancelAnimationFrame(firstDrips.myReq);
-        cancelAnimationFrame(secondDrips.myReq);
-        cancelAnimationFrame(allDrips.myReq);
-        canvas.style.display = 'none';
-        stopBlood.innerText = 'Make it bleed';
-    }
+bloodBtn.addEventListener('click', () => {
+    if (clicked === true) startBlood();
+    else stopBlood();
     clicked = clicked === false ? true : false;
-    console.log('clicked: ', clicked);
+})
 
+window.addEventListener('resize', () => {
+    setTimeout(() => {
+        stopBlood();
+        clearInterval(firstDripsDelay);
+        clearInterval(secondDripsDelay);
+        clearInterval(allDripsDelay);
+        createCanvas();
+        startBlood();
+    }, 2000)
 })

@@ -230,15 +230,31 @@ section {
     display: block;
     text-align: center;
     font-size: 2rem; }
+  .happenings__btn {
+    position: absolute;
+    top: 50%;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    font-size: 3.5rem;
+    background-color: #2f3037;
+    color: #fff;
+    border: none; }
+    .happenings__btn--left {
+      left: calc(14% - 6rem); }
+    .happenings__btn--right {
+      right: calc(14% - 6rem); }
   .happenings__container {
     max-width: 72%;
     height: auto;
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
     overflow: hidden;
-    margin: auto; }
+    margin: auto;
+    position: relative; }
   .happenings__event {
-    min-width: 20rem;
+    display: inline-block;
     border-left: 1px solid currentColor; }
     .happenings__event--1 {
       color: #8a0505; }
@@ -291,7 +307,8 @@ section {
   padding: 2rem;
   box-shadow: 3px 3px 10px -4px rgba(255, 255, 255, 0.8);
   background-color: rgba(0, 0, 0, 0.4);
-  transform: skewX(-12deg); }
+  transform: skewX(-12deg);
+  position: relative; }
   .cast > * {
     transform: skewX(12deg); }
   .cast__shape {
