@@ -7,7 +7,6 @@ const bloodBtn = document.querySelector('.bloody__stop');
 let height, width;
 
 function createCanvas() {
-    console.log('create')
     height = bloodyDiv.offsetHeight;
     width = bloodyDiv.offsetWidth;
     canvas.height = height;
@@ -88,7 +87,6 @@ function bleed() {
 bleed();
 
 function startBlood() {
-    console.log('start')
     ctx.clearRect(0, 0, width, height);
     canvas.style.display = 'block';
     createBlood();
@@ -97,7 +95,6 @@ function startBlood() {
 }
 
 function stopBlood() {
-    console.log('stop')
     cancelAnimationFrame(firstDrips.myReq);
     cancelAnimationFrame(secondDrips.myReq);
     cancelAnimationFrame(allDrips.myReq);
