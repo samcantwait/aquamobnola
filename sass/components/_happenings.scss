@@ -6,6 +6,7 @@
         display: block;
         text-align: center;
         font-size: 2rem;
+        padding: 1rem;
     }
 
     &__btn {
@@ -42,7 +43,7 @@
     &__event {
         display: inline-block;
         // flex: 1 0 25%;
-        border-left: 1px solid currentColor;
+        border-left: 2px solid currentColor;
 
         &--1 {
             color: $color-red;
@@ -92,8 +93,8 @@
 
     &__image {
         width: 100%;
-        border-top: 1px solid currentColor;
-        border-bottom: 1px solid currentColor;
+        border-top: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
     }
 
     &__text {

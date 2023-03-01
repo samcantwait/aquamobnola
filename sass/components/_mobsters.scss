@@ -21,6 +21,7 @@
         overflow: hidden;
         border-radius: 50%;
         shape-outside: circle(48.3%);
+        transform: translateX(-1rem) skewX(12deg);
     }
 
     &__img {

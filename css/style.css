@@ -23,6 +23,18 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   /* Include media queries for font size here */ }
+  @media only screen and (max-width: 24em) {
+    html {
+      font-size: 35%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box;
@@ -229,7 +241,8 @@ section {
   .happenings__intro {
     display: block;
     text-align: center;
-    font-size: 2rem; }
+    font-size: 2rem;
+    padding: 1rem; }
   .happenings__btn {
     position: absolute;
     top: 50%;
@@ -255,7 +268,7 @@ section {
     position: relative; }
   .happenings__event {
     display: inline-block;
-    border-left: 1px solid currentColor; }
+    border-left: 2px solid currentColor; }
     .happenings__event--1 {
       color: #8a0505; }
     .happenings__event--2 {
@@ -285,8 +298,8 @@ section {
     width: 100%; }
   .happenings__image {
     width: 100%;
-    border-top: 1px solid currentColor;
-    border-bottom: 1px solid currentColor; }
+    border-top: 2px solid currentColor;
+    border-bottom: 2px solid currentColor; }
   .happenings__text {
     font-size: 1.4rem;
     color: #777;
@@ -319,7 +332,8 @@ section {
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-    shape-outside: circle(48.3%); }
+    shape-outside: circle(48.3%);
+    transform: translateX(-1rem) skewX(12deg); }
   .cast__img {
     height: 15rem;
     width: 15rem;
