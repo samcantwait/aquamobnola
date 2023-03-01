@@ -27,6 +27,10 @@
         &--right {
             right: calc(14% - 6rem);
         }
+
+        @include responsive(phone) {
+            display: none;
+        }
     }
 
     &__container {
@@ -38,6 +42,11 @@
         overflow: hidden;
         margin: auto;
         position: relative;
+
+        @include responsive(phone) {
+            flex-wrap: wrap;
+            width: 90%;
+        }
     }
 
     &__event {
@@ -64,6 +73,10 @@
         &--5 {
             color: $color-green;
         }
+
+        @include responsive(phone) {
+            width: 100%;
+        }
     }
 
     &__date {
@@ -75,6 +88,10 @@
             font-size: 5rem;
             font-weight: 300;
             padding-left: 1rem;
+
+            @include responsive(phone) {
+                font-size: 3rem;
+            }
         }
 
         &--year {
@@ -84,6 +101,10 @@
             text-transform: uppercase;
             width: 10rem;
             padding: 1rem;
+
+            @include responsive(phone) {
+                font-size: 1rem;
+            }
         }
     }
 
@@ -95,6 +116,11 @@
         width: 100%;
         border-top: 2px solid currentColor;
         border-bottom: 2px solid currentColor;
+
+        @include responsive(phone) {
+            width: auto;
+            max-height: 30rem;
+        }
     }
 
     &__text {

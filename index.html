@@ -13,14 +13,21 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="images/aquamob-favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/blood.js" defer></script>
+    <script src="js/navigation.js" defer></script>
     <script src="js/slider.js" defer></script>
     <title>Aquamob NOLA</title>
 </head>
 
 <body>
     <nav class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navigation-toggle">
+        <label for="navigation-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+        <div class="navigation__background">&nbsp;</div>
         <ul class="navigation__list">
             <li class="navigation__item"><a href="#happenings" class="navigation__link">Happening Now</a></li>
             <li class="navigation__item"><a href="#mobsters" class="navigation__link">Meet the Mobsters</a></li>
@@ -177,7 +184,7 @@
     </section>
     <section id="mobsters" class="mobsters">
         <div class="bg-video">
-            <video class="bg-video__content" autoplay muted loop>
+            <video class="bg-video__content" autoplay muted loop playsinline>
                 <source src="images/swimming.mp4" type="video/mp4">
             </video>
         </div>
@@ -319,8 +326,9 @@
     </section>
     <section id="tickets" class="tickets mb-large">
         <h2 class="heading-secondary center-text">Looking for tickets to the prom?</h2>
-        <p>Prom dates are yet to be determined, but you can make sure you're the first to know by signing up to our
-            mailing list here:</p>
+        <p>Prom dates are yet to be determined, but you can make sure you're the first to know by <a
+                href="pages/mailform.html">signing up to our
+                mailing list here</a></p>
     </section>
     <section id="contact" class="contact mb-large">
         <h2 class="heading-secondary center-text">Do you have questions about the show?</h2>

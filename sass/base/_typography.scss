@@ -57,6 +57,10 @@ section {
     color: $color-white;
     font-weight: 400;
     font-size: 3rem;
+
+    @include responsive(phone) {
+        font-size: 2rem;
+    }
 }
 
 .heading-quaternary {

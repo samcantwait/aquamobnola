@@ -110,12 +110,15 @@ bloodBtn.addEventListener('click', () => {
 })
 
 window.addEventListener('resize', () => {
-    setTimeout(() => {
-        stopBlood();
-        clearInterval(firstDripsDelay);
-        clearInterval(secondDripsDelay);
-        clearInterval(allDripsDelay);
-        createCanvas();
-        startBlood();
-    }, 2000)
+    if (height !== bloodyDiv.offsetHeight || width !== bloodyDiv.offsetWidth) {
+        setTimeout(() => {
+            console.log('height: ', height, 'window height: ', window.innerHeight, 'width: ', width, 'window width: ', window.innerWidth)
+            stopBlood();
+            clearInterval(firstDripsDelay);
+            clearInterval(secondDripsDelay);
+            clearInterval(allDripsDelay);
+            createCanvas();
+            startBlood();
+        }, 2000)
+    }
 })
