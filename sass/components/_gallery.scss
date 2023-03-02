@@ -1,5 +1,18 @@
 .gallery {
 
+    &__grid--1 {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 25vw);
+    }
+
+    &__item--A {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
     &__grid {
         width: 85%;
         margin: 5rem auto;
@@ -7,6 +20,16 @@
         grid-template-columns: repeat(8, 1fr);
         grid-template-rows: repeat(7, 5vw);
         gap: 1rem;
+
+        @include responsive(cast) {
+            width: 95%;
+            gap: 0.25rem;
+        }
+
+        @include responsive(tab-port) {
+            width: 95%;
+            gap: 0.5rem;
+        }
     }
 
     &__text {

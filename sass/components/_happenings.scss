@@ -110,17 +110,16 @@
 
     &__image-container {
         width: 100%;
+
+        @include responsive(phone) {
+            display: none;
+        }
     }
 
     &__image {
         width: 100%;
         border-top: 2px solid currentColor;
         border-bottom: 2px solid currentColor;
-
-        @include responsive(phone) {
-            width: auto;
-            max-height: 30rem;
-        }
     }
 
     &__text {

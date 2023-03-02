@@ -23,7 +23,7 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   /* Include media queries for font size here */ }
-  @media only screen and (max-width: 24em) {
+  @media only screen and (max-width: 25.876em) {
     html {
       font-size: 35%; } }
   @media only screen and (max-width: 75em) {
@@ -106,7 +106,7 @@ section {
   color: #fff;
   font-weight: 400;
   font-size: 3rem; }
-  @media only screen and (max-width: 24em) {
+  @media only screen and (max-width: 25.876em) {
     .heading-tertiary {
       font-size: 2rem; } }
 
@@ -178,6 +178,17 @@ section {
     border-radius: 1000px;
     animation: makeVisible 1s 15s forwards; }
 
+.gallery__grid--1 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 25vw); }
+
+.gallery__item--A {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
+
 .gallery__grid {
   width: 85%;
   margin: 5rem auto;
@@ -185,6 +196,14 @@ section {
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(7, 5vw);
   gap: 1rem; }
+  @media only screen and (max-width: 32em) {
+    .gallery__grid {
+      width: 95%;
+      gap: 0.25rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .gallery__grid {
+      width: 95%;
+      gap: 0.5rem; } }
 
 .gallery__text {
   display: block;
@@ -260,7 +279,7 @@ section {
       left: calc(14% - 6rem); }
     .happenings__btn--right {
       right: calc(14% - 6rem); }
-    @media only screen and (max-width: 24em) {
+    @media only screen and (max-width: 25.876em) {
       .happenings__btn {
         display: none; } }
   .happenings__container {
@@ -272,7 +291,7 @@ section {
     overflow: hidden;
     margin: auto;
     position: relative; }
-    @media only screen and (max-width: 24em) {
+    @media only screen and (max-width: 25.876em) {
       .happenings__container {
         flex-wrap: wrap;
         width: 90%; } }
@@ -289,7 +308,7 @@ section {
       color: #923812; }
     .happenings__event--5 {
       color: #025a54; }
-    @media only screen and (max-width: 24em) {
+    @media only screen and (max-width: 25.876em) {
       .happenings__event {
         width: 100%; } }
   .happenings__date {
@@ -300,7 +319,7 @@ section {
       font-size: 5rem;
       font-weight: 300;
       padding-left: 1rem; }
-      @media only screen and (max-width: 24em) {
+      @media only screen and (max-width: 25.876em) {
         .happenings__date--day {
           font-size: 3rem; } }
     .happenings__date--year {
@@ -310,19 +329,18 @@ section {
       text-transform: uppercase;
       width: 10rem;
       padding: 1rem; }
-      @media only screen and (max-width: 24em) {
+      @media only screen and (max-width: 25.876em) {
         .happenings__date--year {
           font-size: 1rem; } }
   .happenings__image-container {
     width: 100%; }
+    @media only screen and (max-width: 25.876em) {
+      .happenings__image-container {
+        display: none; } }
   .happenings__image {
     width: 100%;
     border-top: 2px solid currentColor;
     border-bottom: 2px solid currentColor; }
-    @media only screen and (max-width: 24em) {
-      .happenings__image {
-        width: auto;
-        max-height: 30rem; } }
   .happenings__text {
     font-size: 1.4rem;
     color: #777;
@@ -347,7 +365,7 @@ section {
   position: relative; }
   .cast > * {
     transform: skewX(12deg); }
-    @media only screen and (max-width: 24em) {
+    @media only screen and (max-width: 32em) {
       .cast > * {
         transform: skew(0); } }
   .cast__shape {
@@ -360,9 +378,13 @@ section {
     border-radius: 50%;
     shape-outside: circle(48.3%);
     transform: translateX(-1rem) skewX(12deg); }
-    @media only screen and (max-width: 24em) {
+    @media only screen and (max-width: 32em) {
       .cast__shape {
         transform: translateX(-1rem) skew(0); } }
+    @media only screen and (max-width: 20.75em) {
+      .cast__shape {
+        transform: translateX(-1rem) skew(0);
+        float: none; } }
   .cast__img {
     height: 15rem;
     width: 15rem;
@@ -386,7 +408,7 @@ section {
     transform: translate(-50%, -50%); }
   .cast__text {
     font-size: 1.6rem; }
-  @media only screen and (max-width: 24em) {
+  @media only screen and (max-width: 32em) {
     .cast {
       transform: skew(0); } }
 
@@ -417,6 +439,9 @@ section {
   height: 7rem;
   font-size: 2.2rem;
   z-index: 2; }
+  @media only screen and (max-width: 25.876em) {
+    .navigation {
+      height: 0; } }
   .navigation__container {
     height: 100%;
     max-height: 100vh;
@@ -427,7 +452,7 @@ section {
     align-items: center;
     width: 100%;
     height: 100%; }
-    @media only screen and (max-width: 24em) {
+    @media only screen and (max-width: 25.876em) {
       .navigation__list {
         position: absolute;
         top: 0;
@@ -442,7 +467,7 @@ section {
         transition: all 1s; } }
   .navigation__item {
     transition: all 1.5s; }
-    @media only screen and (max-width: 24em) {
+    @media only screen and (max-width: 25.876em) {
       .navigation__item {
         opacity: 0; } }
   .navigation__link {
@@ -450,25 +475,25 @@ section {
     height: 100%;
     width: 100%;
     border-bottom: 2px solid transparent; }
-    @media only screen and (max-width: 24em) {
+    @media only screen and (max-width: 25.876em) {
       .navigation__link {
         display: block; } }
   .navigation__link:hover, .navigation__link:active {
     border-bottom: 2px solid #fff; }
   .navigation__button {
     display: none;
-    background-color: #000;
+    background-color: #131316;
     height: 7rem;
     width: 7rem;
     position: fixed;
-    top: 0;
+    top: 1rem;
     right: 3rem;
     border-radius: 50%;
     z-index: 2000;
     box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.1);
     text-align: center;
     cursor: pointer; }
-    @media only screen and (max-width: 24em) {
+    @media only screen and (max-width: 25.876em) {
       .navigation__button {
         display: block; } }
   .navigation__background {
@@ -477,12 +502,12 @@ section {
     height: 6rem;
     width: 6rem;
     position: fixed;
-    top: .5rem;
+    top: 1.5rem;
     right: 3.5rem;
     border-radius: 50%;
     z-index: 1000;
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
-    @media only screen and (max-width: 24em) {
+    @media only screen and (max-width: 25.876em) {
       .navigation__background {
         display: block; } }
   .navigation__icon {

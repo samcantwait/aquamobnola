@@ -10,7 +10,7 @@ window.addEventListener('resize', getEventsWidth);
 let eventsWidth, containerWidth, slidesDisplayed;
 function getEventsWidth() {
     containerWidth = container.getBoundingClientRect().width;
-    eventsWidth = containerWidth > 737 ? '25%' : containerWidth > 510 ? '33.333333333%' : '100%';
+    eventsWidth = containerWidth > 737 ? '25%' : containerWidth > 510 ? '33.333333333%' : containerWidth > 299 ? '50%' : '100%';
     slidesDisplayed = containerWidth > 737 ? 4 : containerWidth < 510 ? 2 : 3;
     events.forEach(event => {
         event.style.flex = `1 0 ${eventsWidth}`;
