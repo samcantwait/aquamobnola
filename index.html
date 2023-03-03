@@ -330,8 +330,8 @@
                 <h2 class="heading-secondary center-text tickets__heading">Looking for tickets to the prom?</h2>
                 <p class="tickets__info">Dates have not yet been chosen. <span class="tickets__span">Be the first to
                         know when they are by signing up for our mailing list.</span> </p>
-                <form class="tickets__form" method="POST" action="/response">
-                    <input type="email" name="address" class="tickets__input" placeholder="Email address" required>
+                <form class="tickets__form" method="POST" action="/subscribe">
+                    <input type="email" name="email" class="tickets__input" placeholder="Email address" required>
                     <button class="tickets__button" type="submit">Submit here</button>
                 </form>
             </div>
@@ -340,6 +340,16 @@
     <section id="contact" class="contact mb-large">
         <h2 class="heading-secondary center-text">Do you have questions about the show?</h2>
         <p>Let us know here:</p>
+        <form action="/contact" method="POST" class="contact__form">
+            <label for="fullName" class="contacts__label">Enter your name: </label>
+            <input type="text" class="contacts__input" id="fullName" name="fullName" placeholder="Full Name">
+            <label for="email" class="contacts__label">Enter your email: </label>
+            <input type="email" name="email" class="contacts__input" placeholder="Email address">
+            <label for="message" class="contacts__label">Your message: </label>
+            <textarea name="message" id="message" class="contacts__input" cols="30" rows="10"
+                placeholder="Enter your message here."></textarea>
+            <button class="contact__button" type="submit">Submit here</button>
+        </form>
     </section>
 </body>
 
