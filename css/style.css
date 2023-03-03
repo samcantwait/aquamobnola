@@ -168,7 +168,7 @@ section {
     filter: blur(1px) contrast(1.6); }
   .bloody__stop {
     opacity: 0;
-    z-index: 10000;
+    z-index: 4000;
     position: absolute;
     font-size: 1.6rem;
     bottom: 2rem;
@@ -416,10 +416,10 @@ section {
       transform: skew(0); } }
 
 .tickets {
+  display: flex;
   position: fixed;
   top: 0;
-  left: 0;
-  display: flex;
+  left: -100vw;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -427,13 +427,22 @@ section {
   z-index: 5000;
   background-color: rgba(177, 12, 12, 0.5);
   backdrop-filter: blur(1rem);
-  color: #000; }
+  color: #000;
+  transition: all .5s; }
   .tickets__overlay {
     position: relative;
     width: 80%;
     height: 60%;
     background-color: #fff;
     display: flex; }
+    @media only screen and (max-width: 42em) {
+      .tickets__overlay {
+        width: 95%; } }
+    @media only screen and (max-width: 32em) {
+      .tickets__overlay {
+        width: 100%;
+        flex-direction: column;
+        height: auto; } }
   .tickets__close {
     position: absolute;
     top: 2rem;
@@ -442,23 +451,54 @@ section {
   .tickets__text {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     margin: auto;
-    max-width: 100%; }
+    padding: 2rem; }
   .tickets__span {
     display: block; }
   .tickets__image {
-    margin: 2rem; }
+    margin: 2rem;
+    max-width: 50%; }
+    @media only screen and (max-width: 32em) {
+      .tickets__image {
+        content: url("/images/carrie.svg");
+        max-width: none;
+        width: calc(100% - 4rem); } }
   .tickets__heading {
-    color: currentColor; }
+    color: currentColor;
+    align-self: center;
+    padding: 0;
+    margin: 0; }
+    @media only screen and (max-width: 56.25em) {
+      .tickets__heading {
+        font-size: 3rem; } }
+    @media only screen and (max-width: 42em) {
+      .tickets__heading {
+        font-size: 2rem; } }
   .tickets__info {
     margin: 2rem;
-    font-weight: 600;
-    font-size: 1.6rem; }
+    font-weight: 500;
+    font-size: 1.6rem;
+    width: 80%; }
+    @media only screen and (max-width: 42em) {
+      .tickets__info {
+        font-size: 1.3rem; } }
   .tickets__button {
     display: block;
-    width: 100%; }
+    width: 100%;
+    padding: 1rem;
+    background-image: linear-gradient(to right, #b10c0c, #3d0000);
+    color: #fff;
+    border: none;
+    font-size: 1.6rem; }
+  .tickets__form {
+    width: 80%; }
+  .tickets__input {
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 100%;
+    font-size: 1.6rem; }
 
 .header {
   position: relative;

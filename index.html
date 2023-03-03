@@ -20,6 +20,7 @@
     <script src="js/blood.js" defer></script>
     <script src="js/navigation.js" defer></script>
     <script src="js/slider.js" defer></script>
+    <script src="js/tickets_modal.js" defer></script>
     <title>Aquamob NOLA</title>
 </head>
 
@@ -34,7 +35,8 @@
                 <li class="navigation__item"><a href="#happenings" class="navigation__link">Happening Now</a></li>
                 <li class="navigation__item"><a href="#mobsters" class="navigation__link">Meet the Mobsters</a></li>
                 <li class="navigation__item"><a href="#gallery" class="navigation__link">Photo Gallery</a></li>
-                <li class="navigation__item"><a href="#tickets" class="navigation__link">Purchase Prom Tickets</a></li>
+                <li class="navigation__item"><a href="#tickets" class="navigation__link tickets-link">Purchase Prom
+                        Tickets</a></li>
                 <li class="navigation__item"><a href="#contact" class="navigation__link">Contact Us</a></li>
             </ul>
         </div>
@@ -328,10 +330,9 @@
                 <h2 class="heading-secondary center-text tickets__heading">Looking for tickets to the prom?</h2>
                 <p class="tickets__info">Dates have not yet been chosen. <span class="tickets__span">Be the first to
                         know when they are by signing up for our mailing list.</span> </p>
-                <form action="http://127.0.0.1:3000/" class="tickets__form" method="POST">
-                    <label for="email" class="tickets__label">Enter your email:</label>
-                    <input type="email" class="tickets__input" id="email">
-                    <button class="tickets__button">Submit here</button>
+                <form class="tickets__form" method="POST" action="/response">
+                    <input type="email" name="address" class="tickets__input" placeholder="Email address" required>
+                    <button class="tickets__button" type="submit">Submit here</button>
                 </form>
             </div>
         </div>
