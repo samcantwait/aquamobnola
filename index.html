@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Aqumob NOLA" />
+    <meta property="og:title" content="Aquamob NOLA" />
     <meta property="og:image" content="images/IMG_8160.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,13 +41,6 @@
     </nav>
     <header class="header">
         <div class="bloody">
-            <!-- <svg class="bloody__filter">
-                <filter id="noise">
-                    <feTurbulence baseFrequency="0.1" type="fractalNoise" result="turbNoise" />
-                    <feDisplacementMap in="SourceGraphic" in2="turbNoise" xChannelSelector="G" yChannelSelector="B"
-                        scale="4" result="disp" />
-                </filter>
-            </svg> -->
             <canvas class="bloody__canvas"></canvas>
             <button class=" bloody__stop">Stop the blood already!</button>
         </div>
@@ -328,10 +321,20 @@
         <a href="#" class="btn-more center-text mb-large">View all galleries &rarr;</a>
     </section>
     <section id="tickets" class="tickets mb-large">
-        <h2 class="heading-secondary center-text">Looking for tickets to the prom?</h2>
-        <p>Prom dates are yet to be determined, but you can make sure you're the first to know by <a
-                href="pages/mailform.html">signing up to our
-                mailing list here</a></p>
+        <div class="tickets__overlay">
+            <span class="tickets__close">&#10006;</span>
+            <img src="images/carrie1.jpg" alt="Carrie at the prom" class="tickets__image">
+            <div class="tickets__text">
+                <h2 class="heading-secondary center-text tickets__heading">Looking for tickets to the prom?</h2>
+                <p class="tickets__info">Dates have not yet been chosen. <span class="tickets__span">Be the first to
+                        know when they are by signing up for our mailing list.</span> </p>
+                <form action="http://127.0.0.1:3000/" class="tickets__form" method="POST">
+                    <label for="email" class="tickets__label">Enter your email:</label>
+                    <input type="email" class="tickets__input" id="email">
+                    <button class="tickets__button">Submit here</button>
+                </form>
+            </div>
+        </div>
     </section>
     <section id="contact" class="contact mb-large">
         <h2 class="heading-secondary center-text">Do you have questions about the show?</h2>

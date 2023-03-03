@@ -1,10 +1,11 @@
 .gallery {
 
     &__grid--1 {
-        width: 100%;
+        width: calc(100% + 8rem);
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 25vw);
+        transform: translateX(-4rem);
     }
 
     &__item--A {

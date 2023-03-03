@@ -10,4 +10,9 @@ function toggle() {
 }
 
 button.addEventListener('click', toggle);
-list.addEventListener('click', toggle);
+
+list.addEventListener('click', e => {
+    if (body.classList.contains('toggled')) {
+        toggle();
+    }
+})

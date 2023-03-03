@@ -4,11 +4,15 @@ const ctx = canvas.getContext("2d");
 const bloodyDiv = document.querySelector('.bloody');
 const bloodBtn = document.querySelector('.bloody__stop');
 
+const header = document.querySelector('.header');
+header.style.height = `${window.innerHeight}px`;
+bloodyDiv.style.height = `${window.innerHeight}px`;
+
 let height, width;
 
 function createCanvas() {
-    height = bloodyDiv.offsetHeight;
-    width = bloodyDiv.offsetWidth;
+    height = window.innerHeight;
+    width = window.innerWidth;
     canvas.height = height;
     canvas.width = width;
 }
@@ -88,6 +92,7 @@ bleed();
 
 function startBlood() {
     ctx.clearRect(0, 0, width, height);
+    createCanvas();
     canvas.style.display = 'block';
     createBlood();
     bleed();
@@ -112,7 +117,6 @@ bloodBtn.addEventListener('click', () => {
 window.addEventListener('resize', () => {
     if (height !== bloodyDiv.offsetHeight || width !== bloodyDiv.offsetWidth) {
         setTimeout(() => {
-            console.log('height: ', height, 'window height: ', window.innerHeight, 'width: ', width, 'window width: ', window.innerWidth)
             stopBlood();
             clearInterval(firstDripsDelay);
             clearInterval(secondDripsDelay);

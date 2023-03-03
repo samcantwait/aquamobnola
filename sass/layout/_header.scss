@@ -1,7 +1,11 @@
 .header {
     position: relative;
     width: 100%;
-    height: calc(100vh - 7rem);
+    margin-top: -7rem;
+
+    @include responsive(change-menu) {
+        height: 100vh;
+    }
 
     &__text-box {
         display: block;
