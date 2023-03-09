@@ -12,7 +12,7 @@
         &>:first-child {
             margin-left: $gutter;
 
-            @include responsive(tab-port) {
+            @include responsive(case) {
                 margin-left: auto;
             }
         }
@@ -20,7 +20,7 @@
         &>:last-child {
             margin-right: $gutter;
 
-            @include responsive(tab-port) {
+            @include responsive(case) {
                 margin-right: auto;
             }
         }

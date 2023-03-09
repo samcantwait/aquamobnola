@@ -61,7 +61,7 @@
             border: 1rem solid $color-red-dark;
         }
 
-        @include responsive(cast) {
+        @include responsive(case) {
             position: relative;
             display: block;
             width: 100%;

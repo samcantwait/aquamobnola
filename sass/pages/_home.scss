@@ -25,4 +25,10 @@ section {
     background-image: linear-gradient(rgba($color-red-dark, 0.8), rgba($color-red-dark, 0.8)), url("/images/raymond-rehage-group-med.jpg");
     background-size: cover;
     background-attachment: fixed;
+
+    @include responsive(cast) {
+        background-image: linear-gradient(rgba($color-red-dark, 0.8), rgba($color-red-dark, 0.8)), url("/images/raymond-rehage-group-400.jpg");
+        background-size: contain;
+        background-position: top -20rem center;
+    }
 }

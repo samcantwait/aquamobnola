@@ -45,20 +45,25 @@
         display: inline-block;
         height: 100%;
         padding: 1.2rem 1.2rem 1.6rem 1.2rem;
-        border-top: .5rem solid transparent;
+        border-top: .8rem solid transparent;
         transition: transform .5s;
 
         &:hover,
         &:focus {
-            border-top: .5rem solid $color-white-mid;
+            border-top: .8rem solid $color-white-mid;
+        }
+
+        &:hover .navigation__link,
+        &:focus .navigation__link {
+            color: $color-red;
         }
 
         &--active {
-            border-top: .5rem solid $color-red;
+            border-top: .8rem solid $color-red;
 
             &:hover,
             &:focus {
-                border-top: .5rem solid $color-white-mid;
+                border-top: .8rem solid $color-white-mid;
             }
         }
 
