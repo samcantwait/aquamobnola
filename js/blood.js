@@ -11,8 +11,8 @@ bloodyDiv.style.height = `${window.innerHeight}px`;
 let height, width;
 
 function createCanvas() {
-    height = window.innerHeight;
-    width = window.innerWidth;
+    height = window.innerHeight + 200;
+    width = window.innerWidth + 200;
     canvas.height = height;
     canvas.width = width;
 }

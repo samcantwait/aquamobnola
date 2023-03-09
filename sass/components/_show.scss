@@ -1,0 +1,65 @@
+.show {
+    display: block;
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 10rem 0;
+    overflow: hidden;
+    z-index: 5;
+    background-color: $color-black;
+
+    &__heading {
+        color: $color-white;
+    }
+
+    &__photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__credit {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 0.8rem;
+    }
+
+    &__photos {
+        position: relative;
+        width: 55%;
+        padding: 0.5rem 1.5rem 0 1.5rem;
+        border: 8px solid $color-red-dark;
+        background-color: $color-black;
+        transition: all .2s;
+
+        &-container {
+            position: relative;
+        }
+
+        &-1 {
+            position: absolute;
+            top: 2rem;
+            left: 0;
+        }
+
+        &-2 {
+            position: absolute;
+            top: 6rem;
+            right: 0;
+        }
+
+        &-3 {
+            position: absolute;
+            top: 12rem;
+            left: 20%;
+        }
+
+        &:hover {
+            z-index: 20;
+            transform: scale(1.2) translateY(-20px);
+            border: 1rem solid $color-red-dark;
+        }
+    }
+
+
+}

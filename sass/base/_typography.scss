@@ -14,6 +14,13 @@ section {
     font-weight: 200;
 }
 
+.photo-credit {
+    font-size: 1rem;
+    color: $color-white-light;
+    transform-origin: top left;
+    transform: rotate(-90deg);
+}
+
 .heading-primary {
     color: $color-white;
     font-weight: 400;
@@ -51,12 +58,13 @@ section {
     font-weight: 400;
     font-size: 3.6rem;
     padding-top: 8rem;
+    text-align: center;
 }
 
 .heading-tertiary {
     color: $color-white;
     font-weight: 400;
-    font-size: 3rem;
+    font-size: 2rem;
 
     @include responsive(phone) {
         font-size: 2rem;

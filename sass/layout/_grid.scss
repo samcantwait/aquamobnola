@@ -1,0 +1,19 @@
+.grid {
+    display: grid;
+    gap: $gutter;
+    margin: 0 auto;
+    max-width: $grid-width;
+
+    &--col-2 {
+        grid-template-columns: 1fr 1fr;
+
+
+        &>:first-child {
+            margin-left: $gutter;
+        }
+
+        &>:last-child {
+            margin-right: $gutter;
+        }
+    }
+}
