@@ -28,6 +28,10 @@
     margin-top: 8rem !important;
 }
 
+.extra-padding {
+    padding-bottom: 7rem;
+}
+
 .btn-more {
     cursor: pointer;
 }
@@ -44,7 +48,7 @@
     padding-bottom: 3vh;
     background-color: $color-red-blood;
     clip-path: polygon(0 21vh, 0 100%, 100% calc(100% - 19vh), 100% 1vh);
-    z-index: 50000;
+    z-index: 1000;
 }
 
 .section-backdrop {
@@ -52,8 +56,6 @@
     display: block;
     background-color: $color-black;
     width: 100%;
-    // padding: 30vh 0 30rem 0;
-    // margin-top: -23vh;
     clip-path: polygon(0 22vh, 0 calc(100% - 2vh), 100% calc(100% - 17vh), 100% 6vh);
     z-index: 6;
 }

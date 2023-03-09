@@ -9,6 +9,20 @@ section {
 
 .gallery {
     padding: 4rem;
+    margin-top: -22vh;
     // background-image: radial-gradient(circle at 90% 80%, $color-black , $color-grey-mid);
     background-color: $color-grey-darkest;
+}
+
+.section-mobsters {
+    position: relative;
+    margin-top: -19.2vh;
+    padding: 10rem 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    background-image: linear-gradient(rgba($color-red-dark, 0.8), rgba($color-red-dark, 0.8)), url("/images/raymond-rehage-group.jpg");
+    background-size: cover;
+    background-attachment: fixed;
 }

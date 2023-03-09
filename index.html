@@ -19,13 +19,14 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/blood.js" defer></script>
     <script src="js/navigation.js" defer></script>
-    <script src="js/slider.js" defer></script>
+    <!-- <script src="js/slider.js" defer></script> -->
     <script src="js/tickets_modal.js" defer></script>
+    <script src="js/parallax.js" defer></script>
     <title>Aquamob NOLA</title>
 </head>
 
 <body>
-    <nav class="navigation">
+    <nav class="navigation" id="top">
         <div class="navigation__container">
             <div class="navigation__button">
                 <span class="navigation__icon">&nbsp;</span>
@@ -33,22 +34,22 @@
             <div class="navigation__background">&nbsp;</div>
             <ul class="navigation__list">
                 <li class="navigation__item navigation__item--active">
-                    <a href="" class="navigation__link">About</a>
+                    <a href="#top" class="navigation__link">Upcoming</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="" class="navigation__link">Upcoming</a>
+                    <a href="#show" class="navigation__link">About</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="" class="navigation__link">Mobsters</a>
+                    <a href="#mobsters" class="navigation__link">Mobsters</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="" class="navigation__link">Gallery</a>
+                    <a href="#gallery" class="navigation__link">Gallery</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="" class="navigation__link">Subscribe</a>
+                    <a href="" class="navigation__link tickets-link">Subscribe</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="" class="navigation__link">Contact</a>
+                    <a href="#contact" class="navigation__link">Contact</a>
                 </li>
             </ul>
         </div>
@@ -69,10 +70,10 @@
     </header>
     <main class="main">
         <div class="section-wrapper">
-            <section class="section-backdrop section-show">
+            <section class="section-backdrop section-show" id="show">
                 <div class="show">
-                    <h2 class="heading-secondary show__heading mb-large">The Show</h2>
-                    <div class="grid grid--col-2">
+                    <h2 class="heading-secondary show__heading mb-large mt-large">The Show</h2>
+                    <div class="grid grid--col-2 extra-padding">
                         <div class="">
                             <h3 class="heading-tertiary mb-xsmall">A Blurb About The Show</h3>
                             <p class="show__text mb-small">Some of the most amazing artists and creators from around the
@@ -121,14 +122,14 @@
                 </div>
             </section>
         </div>
-        <section id="mobsters" class="mobsters">
-            <div class="bg-video">
+        <section id="mobsters" class="section-mobsters mobsters">
+            <!-- <div class="bg-video">
                 <video class="bg-video__content" autoplay muted loop playsinline>
                     <source src="images/swimming.mp4" type="video/mp4">
                 </video>
-            </div>
+            </div> -->
             <div class="center-text mb-large">
-                <h2 class="heading-secondary">Meet The Mobsters</h2>
+                <h2 class="heading-secondary mt-large">Meet The Mobsters</h2>
             </div>
             <div class="mobsters__cast">
                 <div class="cast mb-large">
@@ -209,77 +210,76 @@
                         </p>
                     </div>
                 </div>
-                <a class="btn-more center-text mb-large">View the rest of the cast and crew &rarr;
+                <a class="btn-more center-text mb-large extra-padding">View the rest of the cast and crew &rarr;
                     &#40;inactive link&#41; </a>
             </div>
         </section>
-        <section id="gallery" class="gallery">
-            <div class="center-text mb-large">
-                <h2 class="heading-secondary">Photo Gallery</h2>
-            </div>
-            <div class="center-text">
-                <h3 class="heading-tertiary">2022: Alien</h3>
-            </div>
-            <div class="gallery__grid mb-large">
-                <img src="images/IMG_8124.jpg" alt="" class="gallery__item gallery__item--1">
-                <img src="images/IMG_8126.jpg" alt="" class="gallery__item gallery__item--2">
-                <img src="images/IMG_8135.jpg" alt="" class="gallery__item gallery__item--3">
-                <img src="images/IMG_8136.jpg" alt="" class="gallery__item gallery__item--4">
-                <img src="images/IMG_8145.jpg" alt="" class="gallery__item gallery__item--5">
-                <img src="images/IMG_8152.jpg" alt="" class="gallery__item gallery__item--6">
-                <img src="images/IMG_8168.jpg" alt="" class="gallery__item gallery__item--7">
-                <img src="images/IMG_8171.jpg" alt="" class="gallery__item gallery__item--8">
-                <img src="images/IMG_8185.jpg" alt="" class="gallery__item gallery__item--9">
-                <img src="images/stock3.jpg" alt="" class="gallery__item gallery__item--10">
-                <img src="images/stock4.jpg" alt="" class="gallery__item gallery__item--11">
-                <img src="images/stock6.jpg" alt="" class="gallery__item gallery__item--12">
-            </div>
-            <a class="btn-more center-text mb-large">View the full gallery &rarr; &#40;inactive link&#41;</a>
-            <div class="center-text">
-                <h3 class="heading-tertiary">2021: Suspiria</h3>
-            </div>
-            <div class="gallery__grid mb-large">
-                <img src="images/suspiria1.jpg" alt="" class="gallery__item gallery__item--1">
-                <img src="images/suspiria3.jpg" alt="" class="gallery__item gallery__item--2">
-                <img src="images/suspiria5.jpg" alt="" class="gallery__item gallery__item--3">
-                <img src="images/suspiria4.jpg" alt="" class="gallery__item gallery__item--4">
-                <img src="images/suspiria6.jpg" alt="" class="gallery__item gallery__item--5">
-                <img src="images/suspiria7.webp" alt="" class="gallery__item gallery__item--6">
-                <img src="images/suspiria8.jpg" alt="" class="gallery__item gallery__item--7">
-                <img src="images/suspiria9.webp" alt="" class="gallery__item gallery__item--8">
-                <img src="images/suspiria12.jpg" alt="" class="gallery__item gallery__item--9">
-                <img src="images/suspiria11.webp" alt="" class="gallery__item gallery__item--10">
-                <img src="images/suspiria10.webp" alt="" class="gallery__item gallery__item--11">
-                <img src="images/suspiria2.jpg" alt="" class="gallery__item gallery__item--12">
-            </div>
-            <a class="btn-more center-text mb-large">View the full gallery &rarr; &#40;inactive link&#41;</a>
-            <div class="center-text">
-                <h3 class="heading-tertiary">2020: Watership Down</h3>
-            </div>
-            <div class="gallery__grid mb-large">
-                <img src="images/water1.png" alt="" class="gallery__item gallery__item--1">
-                <img src="images/water2.jpg" alt="" class="gallery__item gallery__item--2">
-                <img src="images/water3.webp" alt="" class="gallery__item gallery__item--3">
-                <img src="images/water6.jpg" alt="" class="gallery__item gallery__item--4">
-                <img src="images/water5.jpg" alt="" class="gallery__item gallery__item--5">
-                <img src="images/water4.jpg" alt="" class="gallery__item gallery__item--6">
-                <img src="images/water7.jpg" alt="" class="gallery__item gallery__item--7">
-                <img src="images/water8.jpg" alt="" class="gallery__item gallery__item--8">
-                <img src="images/water9.jpg" alt="" class="gallery__item gallery__item--9">
-                <img src="images/water10.jfif" alt="" class="gallery__item gallery__item--10">
-                <img src="images/water11.jpg" alt="" class="gallery__item gallery__item--11">
-                <img src="images/water12.webp" alt="" class="gallery__item gallery__item--12">
-            </div>
-            <a class="btn-more center-text">View the full gallery &rarr; &#40;inactive link&#41;</a>
-            <p class="gallery__text">or</p>
-            <a class="btn-more center-text mb-large">View all galleries &rarr; &#40;inactive link&#41;</a>
-        </section>
+        <div class="section-wrapper">
+            <section id="gallery" class="section-backdrop gallery">
+                <div class="center-text mb-large mt-medium">
+                    <h2 class="heading-secondary mt-large">Photo Gallery</h2>
+                </div>
+                <div class="center-text">
+                    <h3 class="heading-tertiary">2022: Ripley and the Cat</h3>
+                </div>
+                <div class="gallery__grid mb-large">
+                    <img src="images/ripley/brian-boudreaux-9-600.jpg" alt="" class="gallery__item gallery__item--1">
+                    <img src="images/ripley/eli-mergel-1663-600.jpg" alt="" class="gallery__item gallery__item--2">
+                    <img src="images/ripley/brian-boudreaux-43-600.jpg" alt="" class="gallery__item gallery__item--3">
+                    <img src="images/ripley/brian-boudreaux-54-600.jpg" alt="" class="gallery__item gallery__item--4">
+                    <img src="images/ripley/madeline-corcoran-1403-600.jpg" alt=""
+                        class="gallery__item gallery__item--5">
+                    <img src="images/ripley/raymond-rehage-1402-600.jpg" alt="" class="gallery__item gallery__item--6">
+                    <img src="images/ripley/eli-mergel-1584-600.jpg" alt="" class="gallery__item gallery__item--7">
+                    <img src="images/ripley/brian-boudreaux-70-600.jpg" alt="" class="gallery__item gallery__item--8">
+                    <img src="images/ripley/eli-mergel-1767-600.jpg" alt="" class="gallery__item gallery__item--9">
+                    <img src="images/ripley/eli-mergel-1725-600.jpg" alt="" class="gallery__item gallery__item--10">
+                    <img src="images/ripley/brian-boudreaux-11-600.jpg" alt="" class="gallery__item gallery__item--11">
+                    <img src="images/ripley/brian-boudreaux-21-600.jpg" alt="" class="gallery__item gallery__item--12">
+                </div>
+                <a class="btn-more center-text mb-large">View the full gallery &rarr; &#40;inactive link&#41;</a>
+                <div class="center-text">
+                    <h3 class="heading-tertiary">2021: Suspiria</h3>
+                </div>
+                <div class="gallery__grid mb-large">
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8791-600.jpg" alt=""
+                        class="gallery__item gallery__item--1a">
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8810-600.jpg" alt=""
+                        class="gallery__item gallery__item--2a">
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8778-600.jpg" alt=""
+                        class="gallery__item gallery__item--3a">
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8693-600.jpg" alt=""
+                        class="gallery__item gallery__item--4a">
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8790-600.jpg" alt=""
+                        class="gallery__item gallery__item--5a">
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8377-600.jpg" alt=""
+                        class="gallery__item gallery__item--6a">
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8724-600.jpg" alt=""
+                        class="gallery__item gallery__item--7a">
+
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8105-600.jpg" alt=""
+                        class="gallery__item gallery__item--8a">
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8769-600.jpg" alt=""
+                        class="gallery__item gallery__item--9a">
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8556-600.jpg" alt=""
+                        class="gallery__item gallery__item--10a">
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8271-600.jpg" alt=""
+                        class="gallery__item gallery__item--11a">
+                    <img src="images/suspiriAcqua/raymond-rehage/raymond-rehage-8753-600.jpg" alt=""
+                        class="gallery__item gallery__item--12a">
+                </div>
+                <a class="btn-more center-text">View the full gallery &rarr; &#40;inactive link&#41;</a>
+                <p class="gallery__text">or</p>
+                <a class="btn-more center-text mb-large extra-padding">View all galleries &rarr; &#40;inactive
+                    link&#41;</a>
+            </section>
+        </div>
         <section id="tickets" class="tickets mb-large">
             <div class="tickets__overlay">
                 <span class="tickets__close">&#10006;</span>
-                <img src="images/carrie1.jpg" alt="Carrie at the prom" class="tickets__image">
+                <img src="images/ripley/brian-boudreaux-9-600.jpg" alt="Carrie at the prom" class="tickets__image">
                 <div class="tickets__text">
-                    <h2 class="heading-secondary center-text tickets__heading">Looking for tickets to the prom?</h2>
+                    <h2 class="heading-secondary center-text tickets__heading">Looking for tickets?</h2>
                     <p class="tickets__info">Dates have not yet been chosen. <span class="tickets__span">Be the first to
                             know when they are by signing up for our mailing list.</span> </p>
                     <form class="tickets__form" method="POST" action="/subscribe">

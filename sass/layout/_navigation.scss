@@ -4,13 +4,11 @@
     font-size: 1.7rem;
     text-transform: uppercase;
     overflow-y: auto;
-    height: 9vh;
     width: 100%;
-    min-height: 100%;
     z-index: 1005;
 
     @include responsive(change-menu) {
-        height: 0;
+        min-height: 100%;
     }
 
     &__container {
@@ -45,7 +43,7 @@
     &__item {
         display: inline-block;
         height: 100%;
-        padding: 1.3rem;
+        padding: 1.2rem 1.2rem 1.6rem 1.2rem;
         border-top: .5rem solid transparent;
         transition: transform .5s;
 
@@ -55,7 +53,7 @@
         }
 
         &--active {
-            border-top: .5rem solid $color-red-light;
+            border-top: .5rem solid $color-red;
 
             &:hover,
             &:focus {
@@ -64,8 +62,12 @@
         }
 
         @include responsive(change-menu) {
+            display: block;
             opacity: 0;
             height: auto;
+            padding: .7rem;
+            width: 30%;
+            margin: 0 auto;
         }
     }
 
@@ -76,7 +78,6 @@
 
         @include responsive(change-menu) {
             display: block;
-
         }
     }
 

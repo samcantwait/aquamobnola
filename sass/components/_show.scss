@@ -34,6 +34,7 @@
 
         &-container {
             position: relative;
+            min-height: 45rem;
         }
 
         &-1 {
@@ -58,6 +59,17 @@
             z-index: 20;
             transform: scale(1.2) translateY(-20px);
             border: 1rem solid $color-red-dark;
+        }
+
+        @include responsive(cast) {
+            position: relative;
+            display: block;
+            width: 100%;
+            align-items: center;
+            margin: 0 0 2rem;
+            top: auto;
+            left: auto;
+            right: auto;
         }
     }
 
