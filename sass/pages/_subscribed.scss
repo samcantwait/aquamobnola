@@ -1,0 +1,10 @@
+.subscribed {
+    width: 80%;
+    margin: 8rem auto;
+
+    &__mailto,
+    &__return {
+        text-decoration: underline;
+        text-underline-offset: .8rem;
+    }
+}

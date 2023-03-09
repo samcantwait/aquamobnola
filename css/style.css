@@ -68,7 +68,7 @@ body {
   color: #fff; }
 
 section {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   position: relative;
   font-size: 2rem;
   font-weight: 200; }
@@ -125,8 +125,14 @@ section {
 .mb-large {
   margin-bottom: 8rem !important; }
 
+.mt-medium {
+  margin-top: 4rem !important; }
+
 .mt-large {
   margin-top: 8rem !important; }
+
+.btn-more {
+  cursor: pointer; }
 
 .btn-more:hover,
 .btn-more:active {
@@ -179,6 +185,102 @@ section {
     background-color: rgba(120, 0, 0, 0.7);
     border-radius: 1000px;
     animation: makeVisible 1s 15s forwards; }
+
+.contact {
+  padding: 10rem 10% 10% 10%;
+  background-color: #111111; }
+  @media only screen and (max-width: 32em) {
+    .contact {
+      padding: 10rem 0 0 0; } }
+  .contact__container {
+    position: relative;
+    width: 80%;
+    background-color: #fff;
+    color: #000;
+    border: 0.8rem solid #000;
+    border-radius: 2rem;
+    margin: auto;
+    display: block; }
+    @media only screen and (max-width: 32em) {
+      .contact__container {
+        width: 90%; } }
+  .contact__image {
+    padding: 2rem;
+    width: 100%; }
+    .contact__image--container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      border: 0.3rem solid #2f3037;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      transform: translate(-50%, -50%); }
+      @media only screen and (max-width: 42em) {
+        .contact__image--container {
+          width: 12rem;
+          height: 12rem; } }
+      @media only screen and (max-width: 25.876em) {
+        .contact__image--container {
+          width: 10rem;
+          height: 10rem; } }
+  .contact__heading {
+    color: currentColor;
+    text-align: center;
+    padding-top: 8rem; }
+    @media only screen and (max-width: 32em) {
+      .contact__heading {
+        font-size: 2.5rem; } }
+    @media only screen and (max-width: 25.876em) {
+      .contact__heading {
+        font-size: 2rem; } }
+  .contact__form {
+    width: 80%;
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem; }
+    @media only screen and (max-width: 32em) {
+      .contact__form {
+        width: 90%; } }
+  .contact__input {
+    padding: 1rem;
+    font-family: 'Libre Franklin', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: 400; }
+    .contact__input--name, .contact__input--email {
+      width: 50%; }
+      @media only screen and (max-width: 42em) {
+        .contact__input--name, .contact__input--email {
+          width: 100%; } }
+    .contact__input--text {
+      width: 100%; }
+  .contact__col {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.3rem; }
+    @media only screen and (max-width: 42em) {
+      .contact__col {
+        flex-direction: column; } }
+  .contact__button {
+    margin: 1.3rem;
+    padding: 1.2rem 3rem;
+    align-self: flex-end;
+    background-color: rgba(177, 12, 12, 0.9);
+    border: none;
+    color: #fff;
+    letter-spacing: 1px; }
+    .contact__button:hover, .contact__button:focus {
+      transform: translateY(-1px);
+      box-shadow: 2px 2px 2px #000; }
+    .contact__button:active {
+      transform: translateY(1px); }
 
 .gallery__grid--1 {
   width: calc(100% + 8rem);
@@ -346,7 +448,7 @@ section {
     border-bottom: 2px solid currentColor; }
   .happenings__text {
     font-size: 1.4rem;
-    color: #777;
+    color: #a7a7a7;
     font-family: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 1rem; }
   .happenings__heading {
@@ -427,6 +529,7 @@ section {
   z-index: 5000;
   background-color: rgba(177, 12, 12, 0.5);
   backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
   color: #000;
   transition: all .5s; }
   .tickets__overlay {
@@ -657,3 +760,10 @@ section {
 .gallery {
   padding: 4rem;
   background-color: #111111; }
+
+.subscribed {
+  width: 80%;
+  margin: 8rem auto; }
+  .subscribed__mailto, .subscribed__return {
+    text-decoration: underline;
+    text-underline-offset: .8rem; }

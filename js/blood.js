@@ -32,11 +32,10 @@ class Blood {
         ctx.beginPath();
         ctx.arc(this.x2, this.y2, this.radius, 0, Math.PI * 2);
         ctx.closePath();
-        ctx.fillStyle = 'rgb(177, 12, 12)';
+        ctx.fillStyle = 'rgb(177, 12, 12, 0.5)';
         ctx.fill();
     }
 }
-
 
 let myReq;
 const animate = (drips, animationName) => {
@@ -75,7 +74,7 @@ function createBlood() {
     ]
 
     let i = 0;
-    while (i < width / 10) {
+    while (i < width / 8) {
         allDrips.push(new Blood(setX(), setY(), setRadius(), setSpeed()));
         i++;
     }

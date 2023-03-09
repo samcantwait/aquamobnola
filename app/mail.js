@@ -21,7 +21,8 @@ module.exports.subscribe =
 
         let info = await transporter.sendMail({
             from: `'"Subscription Notification" <subscribe@aquamobnola.com>'`,
-            to: `${email}, subscribe@aquamobnola.com`,
+            to: `${email}`,
+            bcc: `subscribe@aquamobnola.com`,
             subject: "You have successfully subscribed!",
             html: html,
         });

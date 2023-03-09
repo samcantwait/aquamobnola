@@ -1,11 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mail = require('./app/mail');
+const ejsMate = require('ejs-mate');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.engine('ejs', ejsMate);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname));
 
@@ -15,13 +20,12 @@ app.get("/", (req, res) => {
 
 app.post("/subscribe", async (req, res) => {
     await mail.subscribe(req.body.email).catch(e => { console.log(e) });
-    res.send('Email sent');
-    // res.sendFile(__dirname + "/index.html");
+    res.render('subscribed', { email: req.body.email })
 });
 
 app.post("/contact", async (req, res) => {
     await mail.info(req.body).catch(e => { console.log(e) });
-    res.send(`Message from "${req.body.fullName}". Email address is "${req.body.email}".  The message is: "${req.body.message}"`);
+    res.redirect('/');
 })
 
 app.listen(3000, () => {
