@@ -12,7 +12,7 @@ let height, width;
 
 function createCanvas() {
     height = window.innerHeight + 200;
-    width = window.innerWidth + 200;
+    width = window.innerWidth;
     canvas.height = height;
     canvas.width = width;
 }
