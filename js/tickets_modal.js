@@ -11,7 +11,6 @@ openModal.addEventListener('click', e => {
 })
 
 modal.addEventListener('click', e => {
-    console.log(e.target)
     if (e.target.classList.contains('tickets') || e.target.classList.contains('tickets__close')) {
         modal.style.left = '-100vw';
     }
@@ -27,6 +26,3 @@ forms.forEach(form => {
         form.querySelector('.submit--btn').innerText = 'Submitting...';
     });
 });
-
-console.log(history.pushState)
-history.pushState('backedItUp', null, null)

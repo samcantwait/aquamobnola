@@ -12,6 +12,10 @@ section {
     margin-top: -22vh;
     // background-image: radial-gradient(circle at 90% 80%, $color-black , $color-grey-mid);
     background-color: $color-grey-darkest;
+
+    @include responsive(change-menu) {
+        padding: 4rem 0;
+    }
 }
 
 .section-mobsters {
