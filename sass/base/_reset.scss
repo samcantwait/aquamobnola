@@ -14,7 +14,7 @@ html {
     /* Include media queries for font size here */
 
     @include responsive(phone) {
-        font-size: 35%;
+        font-size: 15%;
     }
 
     @include responsive(tab-land) {

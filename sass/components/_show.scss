@@ -11,6 +11,11 @@
         color: $color-white;
     }
 
+    &__container {
+        margin: 0;
+        padding: 0;
+    }
+
     &__photo {
         width: 100%;
         height: 100%;
@@ -61,7 +66,7 @@
             border: 1rem solid $color-red-dark;
         }
 
-        @include responsive(case) {
+        @include responsive(cast) {
             position: relative;
             display: block;
             width: 100%;
@@ -72,6 +77,5 @@
             right: auto;
         }
     }
-
 
 }

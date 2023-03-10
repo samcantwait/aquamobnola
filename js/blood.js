@@ -114,7 +114,7 @@ bloodBtn.addEventListener('click', () => {
 })
 
 window.addEventListener('resize', () => {
-    if (height !== bloodyDiv.offsetHeight || width !== bloodyDiv.offsetWidth) {
+    if (height !== bloodyDiv.offsetHeight + 400 || width !== bloodyDiv.offsetWidth) {
         setTimeout(() => {
             stopBlood();
             clearInterval(firstDripsDelay);
