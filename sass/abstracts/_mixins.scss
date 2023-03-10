@@ -48,4 +48,10 @@
             @content;
         }
     }
+
+    @if $breakpoint ==landscape {
+        @media (orientation: landscape) {
+            @content;
+        }
+    }
 }

@@ -203,7 +203,8 @@ section {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    filter: blur(1px) contrast(1.6); }
+    filter: blur(1px) contrast(1.6);
+    background-color: #000; }
   .bloody__stop {
     opacity: 0;
     z-index: 4000;
@@ -764,7 +765,8 @@ section {
 .header {
   position: relative;
   width: 100%;
-  margin-top: -7rem; }
+  margin-top: -7rem;
+  background-color: #000; }
   @media only screen and (max-width: 42em) {
     .header {
       height: 100vh; } }
@@ -945,15 +947,40 @@ section {
   z-index: 4;
   height: 100%;
   width: 100%;
-  background-color: black;
-  background-image: linear-gradient(rgba(61, 0, 0, 0.8), rgba(61, 0, 0, 0.8)), url("/images/raymond-rehage-group-med.jpg");
-  background-size: cover;
-  background-attachment: fixed; }
+  background-color: transparent;
+  background-image: linear-gradient(rgba(61, 0, 0, 0.8), rgba(61, 0, 0, 0.8)); }
+
+.background-image {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; }
+
+.background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; }
+
+.background-img1 {
+  display: none; }
   @media only screen and (max-width: 32em) {
-    .section-mobsters {
-      background-image: linear-gradient(rgba(61, 0, 0, 0.8), rgba(61, 0, 0, 0.8)), url("/images/raymond-rehage-group-400.jpg");
-      background-size: contain;
-      background-position: top -20rem center; } }
+    .background-img1 {
+      display: block; } }
+  @media (orientation: landscape) {
+    .background-img1 {
+      display: none; } }
+
+.background-img2 {
+  display: block; }
+  @media only screen and (max-width: 32em) {
+    .background-img2 {
+      display: none; } }
+  @media (orientation: landscape) {
+    .background-img2 {
+      display: block; } }
 
 .subscribed {
   width: 80%;

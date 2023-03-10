@@ -20,6 +20,7 @@
         padding: 0;
         overflow: hidden;
         filter: blur(1px) contrast(1.6);
+        background-color: $color-black;
     }
 
     &__stop {
