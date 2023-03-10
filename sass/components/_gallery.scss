@@ -41,6 +41,10 @@
         &:hover,
         &:focus {
             transform: scale(1.7);
+
+            @include responsive(change-menu) {
+                transform: none !important;
+            }
         }
 
         &--1 {
@@ -210,112 +214,112 @@
             }
         }
 
-        &--1,
-        &--1a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(50%, 25%);
-                }
-            }
-        }
+        // &--1,
+        // &--1a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(50%, 25%);
+        //         }
+        //     }
+        // }
 
-        &--2,
-        &--2a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(15%, 25%);
-                }
-            }
-        }
+        // &--2,
+        // &--2a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(15%, 25%);
+        //         }
+        //     }
+        // }
 
-        &--3,
-        &--3a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(-15%, 25%);
-                }
-            }
-        }
+        // &--3,
+        // &--3a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-15%, 25%);
+        //         }
+        //     }
+        // }
 
-        &--4,
-        &--4a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(-50%, 25%);
-                }
-            }
-        }
+        // &--4,
+        // &--4a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-50%, 25%);
+        //         }
+        //     }
+        // }
 
-        &--5,
-        &--5a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(50%, 0);
-                }
-            }
-        }
+        // &--5,
+        // &--5a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(50%, 0);
+        //         }
+        //     }
+        // }
 
-        &--6,
-        &--6a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(15%, 0);
-                }
-            }
-        }
+        // &--6,
+        // &--6a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(15%, 0);
+        //         }
+        //     }
+        // }
 
-        &--7,
-        &--7a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(-15%, 0);
-                }
-            }
-        }
+        // &--7,
+        // &--7a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-15%, 0);
+        //         }
+        //     }
+        // }
 
-        &--8,
-        &--8a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(-50%, 0);
-                }
-            }
-        }
+        // &--8,
+        // &--8a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-50%, 0);
+        //         }
+        //     }
+        // }
 
-        &--9,
-        &--9a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(50%, -35%);
-                }
-            }
-        }
+        // &--9,
+        // &--9a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(50%, -35%);
+        //         }
+        //     }
+        // }
 
-        &--10,
-        &--10a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(15%, -35%);
-                }
-            }
-        }
+        // &--10,
+        // &--10a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(15%, -35%);
+        //         }
+        //     }
+        // }
 
-        &--11,
-        &--11a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(-15%, -35%);
-                }
-            }
-        }
+        // &--11,
+        // &--11a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-15%, -35%);
+        //         }
+        //     }
+        // }
 
-        &--12,
-        &--12a {
-            &:hover {
-                @include responsive(change-menu) {
-                    transform: scale(3) translate(-50%, -35%);
-                }
-            }
-        }
+        // &--12,
+        // &--12a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-50%, -35%);
+        //         }
+        //     }
+        // }
     }
 }
