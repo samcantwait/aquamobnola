@@ -7,6 +7,24 @@
     background-color: rgba($color-black, .6);
     transform: skewX(-12deg);
     position: relative;
+    z-index: 5;
+    transition: transform 2s;
+
+    &:nth-child(odd) {
+        transform: skew(-12deg) translateX(-100vw);
+
+        @include responsive(cast) {
+            transform: translateX(0) skew(0);
+        }
+    }
+
+    &:nth-child(even) {
+        transform: skew(-12deg) translateX(100vw);
+
+        @include responsive(cast) {
+            transform: translateX(0) skew(0);
+        }
+    }
 
     &>* {
         transform: skewX(12deg);
@@ -71,6 +89,6 @@
     }
 
     @include responsive(cast) {
-        transform: skew(0);
+        transform: translateX(0) skew(0);
     }
 }
