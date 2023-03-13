@@ -226,11 +226,12 @@ section {
     animation: makeVisible 1s 15s forwards; }
 
 .contact {
-  padding: 10rem 10% 10% 10%;
+  margin-top: -40vh;
+  padding: calc(40vh + 10rem) 10% 10% 10%;
   background-color: #000; }
   @media only screen and (max-width: 32em) {
     .contact {
-      padding: 10rem 0 0 0; } }
+      padding: calc(40vh + 10rem) 0 0 0; } }
   .contact__container {
     position: relative;
     width: 80%;
@@ -1004,18 +1005,12 @@ section {
   @media only screen and (max-width: 32em) {
     .background-img1 {
       display: block; } }
-  @media (orientation: landscape) {
-    .background-img1 {
-      display: none; } }
 
 .background-img2 {
   display: block; }
   @media only screen and (max-width: 32em) {
     .background-img2 {
       display: none; } }
-  @media (orientation: landscape) {
-    .background-img2 {
-      display: block; } }
 
 .subscribed {
   width: 80%;

@@ -28,17 +28,6 @@ export const bloodFeature = () => {
             this.radius = radius;
             this.speed = speed;
         }
-        createCanvas();
-
-    class Blood {
-        constructor(x, y, radius, speed) {
-            this.x = x;
-            this.x2 = x;
-            this.y = y;
-            this.y2 = y;
-            this.radius = radius;
-            this.speed = speed;
-        }
 
         drawBlood() {
             ctx.beginPath();

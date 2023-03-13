@@ -1,9 +1,10 @@
 .contact {
-    padding: 10rem 10% 10% 10%;
+    margin-top: -40vh;
+    padding: calc(40vh + 10rem) 10% 10% 10%;
     background-color: $color-black;
 
     @include responsive(cast) {
-        padding: 10rem 0 0 0;
+        padding: calc(40vh + 10rem) 0 0 0;
     }
 
     &__container {
