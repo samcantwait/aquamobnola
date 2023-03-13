@@ -28,6 +28,14 @@ html {
     @include responsive(big-desktop) {
         font-size: 75%;
     }
+
+    @include responsive(shorter) {
+        font-size: 50%;
+    }
+
+    @include responsive(too-short) {
+        font-size: 40%;
+    }
 }
 
 body {

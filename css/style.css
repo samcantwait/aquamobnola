@@ -35,6 +35,12 @@ html {
   @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
+  @media only screen and (max-height: 30em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-height: 22em) {
+    html {
+      font-size: 40%; } }
 
 body {
   box-sizing: border-box;
@@ -764,14 +770,26 @@ section {
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%); }
+    @media only screen and (max-height: 42em) {
+      .header__text-box {
+        top: 50%; } }
+    @media only screen and (max-height: 30em) {
+      .header__text-box {
+        top: 25rem; } }
   .header__img {
     margin-top: 2rem;
     width: 90%; }
+    @media only screen and (max-height: 30em) {
+      .header__img {
+        width: 50%; } }
   .header__title-lower {
     position: absolute;
     bottom: 18%;
     left: 50%;
     transform: translateX(-50%); }
+    @media only screen and (max-height: 42em) {
+      .header__title-lower {
+        bottom: 0; } }
 
 .navigation {
   position: fixed;

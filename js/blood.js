@@ -4,13 +4,14 @@ const ctx = canvas.getContext("2d");
 const bloodyDiv = document.querySelector('.bloody');
 const bloodBtn = document.querySelector('.bloody__stop');
 
-const header = document.querySelector('.header');
-header.style.height = `${window.innerHeight}px`;
-bloodyDiv.style.height = `${window.innerHeight}px`;
+
 
 let height, width;
 
 function createCanvas() {
+    const header = document.querySelector('.header');
+    header.style.height = `${window.innerHeight}px`;
+    bloodyDiv.style.height = `${window.innerHeight}px`;
     height = window.innerHeight + 400;
     width = window.innerWidth;
     canvas.height = height;

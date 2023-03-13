@@ -15,11 +15,23 @@
         left: 50%;
         text-align: center;
         transform: translate(-50%, -50%);
+
+        @include responsive(short) {
+            top: 50%;
+        }
+
+        @include responsive(shorter) {
+            top: 25rem;
+        }
     }
 
     &__img {
         margin-top: 2rem;
         width: 90%;
+
+        @include responsive(shorter) {
+            width: 50%;
+        }
     }
 
     &__title-lower {
@@ -27,5 +39,9 @@
         bottom: 18%;
         left: 50%;
         transform: translateX(-50%);
+
+        @include responsive(short) {
+            bottom: 0;
+        }
     }
 }

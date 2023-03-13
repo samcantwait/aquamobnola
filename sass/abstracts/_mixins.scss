@@ -48,4 +48,22 @@
             @content;
         }
     }
+
+    @if $breakpoint ==short {
+        @media only screen and (max-height: 42em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==shorter {
+        @media only screen and (max-height: 30em) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==too-short {
+        @media only screen and (max-height: 22em) {
+            @content;
+        }
+    }
 }
