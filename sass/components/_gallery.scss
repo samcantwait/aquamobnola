@@ -1,19 +1,5 @@
 .gallery {
 
-    // &__grid--1 {
-    //     width: calc(100% + 8rem);
-    //     display: grid;
-    //     grid-template-columns: repeat(4, 1fr);
-    //     grid-template-rows: repeat(3, 25vw);
-    //     transform: translateX(-4rem);
-    // }
-
-    &__item--A {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
     &__grid {
         width: 85%;
         margin: 5rem auto;
@@ -22,14 +8,12 @@
         grid-template-rows: repeat(7, 5vw);
         gap: 1rem;
 
-        @include responsive(cast) {
-            width: 100%;
-            gap: 0.15rem;
-        }
-
-        @include responsive(tab-port) {
-            width: 100%;
-            gap: 0.3rem;
+        @include responsive(change-menu) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 25vw);
+            gap: 0;
+            margin: 5rem 2px;
+            width: calc(100% - 4px);
         }
     }
 
@@ -49,8 +33,18 @@
         border: 1px solid $color-white;
         transition: all .5s;
 
-        &:hover {
+        @include responsive(change-menu) {
+            border: .5px solid $color-white-light;
+            grid-area: auto !important;
+        }
+
+        &:hover,
+        &:focus {
             transform: scale(1.7);
+
+            @include responsive(change-menu) {
+                transform: none !important;
+            }
         }
 
         &--1 {
@@ -65,16 +59,24 @@
             grid-area: 3 / 3 / 5 / 4;
 
             &:hover {
-                transform: scale(2.5);
+                transform: scale(3);
             }
         }
 
         &--4 {
             grid-area: 1 / 5 / 4 / 6;
+
+            &:hover {
+                transform: scale(2);
+            }
         }
 
         &--5 {
             grid-area: 1 / 3 / 3 /5;
+
+            &:hover {
+                transform: scale(2.5);
+            }
         }
 
         &--6 {
@@ -90,7 +92,7 @@
             grid-area: 6 / 6 / 8 / 8;
 
             &:hover {
-                transform: scale(2);
+                transform: scale(2.3);
             }
         }
 
@@ -98,7 +100,7 @@
             grid-area: 3 / 4 / 4 / 5;
 
             &:hover {
-                transform: scale(3.5);
+                transform: scale(4);
             }
         }
 
@@ -112,14 +114,26 @@
 
         &--10 {
             grid-area: 6 / 8 / 8 / 9;
+
+            &:hover {
+                transform: scale(3);
+            }
         }
 
         &--11 {
             grid-area: 1 / 6 / 3 / 7;
+
+            &:hover {
+                transform: scale(3);
+            }
         }
 
         &--12 {
             grid-area: 1 / 7 / 3 / 9;
+
+            &:hover {
+                transform: scale(2);
+            }
         }
 
         &--1a {
@@ -200,7 +214,112 @@
             }
         }
 
+        // &--1,
+        // &--1a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(50%, 25%);
+        //         }
+        //     }
+        // }
 
+        // &--2,
+        // &--2a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(15%, 25%);
+        //         }
+        //     }
+        // }
 
+        // &--3,
+        // &--3a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-15%, 25%);
+        //         }
+        //     }
+        // }
+
+        // &--4,
+        // &--4a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-50%, 25%);
+        //         }
+        //     }
+        // }
+
+        // &--5,
+        // &--5a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(50%, 0);
+        //         }
+        //     }
+        // }
+
+        // &--6,
+        // &--6a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(15%, 0);
+        //         }
+        //     }
+        // }
+
+        // &--7,
+        // &--7a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-15%, 0);
+        //         }
+        //     }
+        // }
+
+        // &--8,
+        // &--8a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-50%, 0);
+        //         }
+        //     }
+        // }
+
+        // &--9,
+        // &--9a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(50%, -35%);
+        //         }
+        //     }
+        // }
+
+        // &--10,
+        // &--10a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(15%, -35%);
+        //         }
+        //     }
+        // }
+
+        // &--11,
+        // &--11a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-15%, -35%);
+        //         }
+        //     }
+        // }
+
+        // &--12,
+        // &--12a {
+        //     &:hover {
+        //         @include responsive(change-menu) {
+        //             transform: scale(3) translate(-50%, -35%);
+        //         }
+        //     }
+        // }
     }
 }

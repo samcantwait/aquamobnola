@@ -1,32 +1,30 @@
-const modal = document.querySelector('.tickets');
-const openModal = document.querySelector('.tickets-link');
-const btnMore = document.querySelector('.btn-more');
-const closeBtn = document.querySelector('.tickets__close');
-const forms = document.querySelectorAll('form');
+export const tickets_modal = () => {
+    const modal = document.querySelector('.tickets');
+    const openModal = document.querySelector('.tickets-link');
+    const btnMore = document.querySelector('.btn-more');
+    const closeBtn = document.querySelector('.tickets__close');
+    const forms = document.querySelectorAll('form');
 
 
-openModal.addEventListener('click', e => {
-    e.preventDefault();
-    modal.style.left = '0';
-})
+    openModal.addEventListener('click', e => {
+        e.preventDefault();
+        modal.style.left = '0';
+    })
 
-modal.addEventListener('click', e => {
-    console.log(e.target)
-    if (e.target.classList.contains('tickets') || e.target.classList.contains('tickets__close')) {
-        modal.style.left = '-100vw';
-    }
-})
-
-
-forms.forEach(form => {
-    form.addEventListener('submit', (e) => {
-        if (form.classList.contains('is-submitting')) {
-            e.preventDefault();
+    modal.addEventListener('click', e => {
+        if (e.target.classList.contains('tickets') || e.target.classList.contains('tickets__close')) {
+            modal.style.left = '-100vw';
         }
-        form.classList.add('is-submitting');
-        form.querySelector('.submit--btn').innerText = 'Submitting...';
-    });
-});
+    })
 
-console.log(history.pushState)
-history.pushState('backedItUp', null, null)
+
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            if (form.classList.contains('is-submitting')) {
+                e.preventDefault();
+            }
+            form.classList.add('is-submitting');
+            form.querySelector('.submit--btn').innerText = 'Submitting...';
+        });
+    });
+}

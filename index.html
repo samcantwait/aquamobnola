@@ -17,44 +17,40 @@
         rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="images/aquamob-favicon.svg">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/blood.js" defer></script>
-    <script src="js/navigation.js" defer></script>
-    <!-- <script src="js/slider.js" defer></script> -->
-    <script src="js/tickets_modal.js" defer></script>
-    <script src="js/parallax.js" defer></script>
+    <script src="js/main.js" type="module" defer></script>
     <title>Aquamob NOLA</title>
 </head>
 
 <body>
-    <nav class="navigation" id="top">
+    <nav class="navigation">
         <div class="navigation__container">
             <div class="navigation__button">
                 <span class="navigation__icon">&nbsp;</span>
             </div>
             <div class="navigation__background">&nbsp;</div>
             <ul class="navigation__list">
-                <li class="navigation__item navigation__item--active">
+                <li class="navigation__item" data-id="top">
                     <a href="#top" class="navigation__link">Upcoming</a>
                 </li>
-                <li class="navigation__item">
+                <li class="navigation__item" data-id="show">
                     <a href="#show" class="navigation__link">About</a>
                 </li>
-                <li class="navigation__item">
+                <li class="navigation__item" data-id="mobsters">
                     <a href="#mobsters" class="navigation__link">Mobsters</a>
                 </li>
-                <li class="navigation__item">
+                <li class="navigation__item" data-id="gallery">
                     <a href="#gallery" class="navigation__link">Gallery</a>
                 </li>
                 <li class="navigation__item">
                     <a href="" class="navigation__link tickets-link">Subscribe</a>
                 </li>
-                <li class="navigation__item">
+                <li class="navigation__item" data-id="contact">
                     <a href="#contact" class="navigation__link">Contact</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <header class="header">
+    <header class="header" id="top">
         <div class="bloody">
             <canvas class="bloody__canvas"></canvas>
             <button class=" bloody__stop">Stop the blood already!</button>
@@ -121,6 +117,10 @@
                     </div>
                 </div>
             </section>
+        </div>
+        <div class="background-image"><img src="images/raymond-rehage-group-400.jpg" alt=""
+                class="background-img1 background-img"><img src="images/raymond-rehage-group-med.jpg" alt=""
+                class="background-img2 background-img">
         </div>
         <section id="mobsters" class="section-mobsters mobsters">
             <!-- <div class="bg-video">

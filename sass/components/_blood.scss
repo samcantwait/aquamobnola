@@ -20,11 +20,12 @@
         padding: 0;
         overflow: hidden;
         filter: blur(1px) contrast(1.6);
+        background-color: $color-black;
     }
 
     &__stop {
         opacity: 0;
-        z-index: 4000;
+        z-index: 3000;
         position: absolute;
         font-size: 1.6rem;
         bottom: 2rem;

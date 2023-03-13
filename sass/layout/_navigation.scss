@@ -6,7 +6,7 @@
     text-transform: uppercase;
     overflow-y: auto;
     width: 100%;
-    z-index: 1005;
+    z-index: 4005;
 
     @include responsive(change-menu) {
         // min-height: 100%;

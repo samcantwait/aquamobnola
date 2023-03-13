@@ -13,15 +13,15 @@
             margin-left: $gutter;
 
             @include responsive(tab-port) {
-                margin-left: auto;
+                margin-left: 0;
             }
         }
 
         &>:last-child {
             margin-right: $gutter;
 
-            @include responsive(case) {
-                margin-right: auto;
+            @include responsive(tab-port) {
+                margin-right: 0;
             }
         }
 
@@ -30,8 +30,6 @@
             grid-template-columns: 1fr;
             grid-template-rows: 1fr;
             max-width: 75%;
-            margin-left: auto;
-            margin-right: auto;
         }
     }
 }
