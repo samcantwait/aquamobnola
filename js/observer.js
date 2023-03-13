@@ -40,9 +40,10 @@ export const observer = () => {
     const grow = (entries, castObserver) => {
         entries.forEach(entry => {
             if (entry.intersectionRatio > .05) {
-                castMembers.forEach(member => {
-                    member.style.transform = 'skew(-12deg) translateX(0)';
-                })
+                checkWidth();
+                // castMembers.forEach(member => {
+                //     member.style.transform = 'skew(-12deg) translateX(0)';
+                // })
                 castObserver.unobserve(entry.target);
             }
         })
@@ -66,20 +67,17 @@ export const observer = () => {
             })
         }
     }
-    checkWidth();
     window.addEventListener('resize', checkWidth)
 
     const links = document.querySelectorAll('.navigation__item');
 
     const options = {
         root: null,
-        threshold: .1,
+        threshold: [0.2, 0.8],
     };
 
     const active = (entries, sectionObserver) => {
         entries.forEach(entry => {
-            // console.log(entry.target.id);
-            // console.log(entry);
             if (entry.isIntersecting) {
                 const active = entry.target.id;
                 links.forEach(link => {
