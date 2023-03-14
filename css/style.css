@@ -224,6 +224,11 @@ section {
     background-color: rgba(120, 0, 0, 0.7);
     border-radius: 1000px;
     animation: makeVisible 1s 15s forwards; }
+    @media only screen and (max-width: 42em) {
+      .bloody__stop {
+        bottom: -3rem;
+        left: 1rem;
+        right: auto; } }
 
 .contact {
   margin-top: -40vh;
@@ -964,6 +969,13 @@ body.toggled .navigation {
 
 section {
   margin: 0; }
+
+.header-background {
+  position: absolute;
+  top: 0;
+  height: 120vh;
+  width: 100vw;
+  background-color: #000; }
 
 .happenings {
   background-color: #131316; }

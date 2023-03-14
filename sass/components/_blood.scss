@@ -36,5 +36,11 @@
         background-color: rgba($color-red-light, .7);
         border-radius: 1000px;
         animation: makeVisible 1s 15s forwards;
+
+        @include responsive(change-menu) {
+            bottom: -3rem;
+            left: 1rem;
+            right: auto;
+        }
     }
 }

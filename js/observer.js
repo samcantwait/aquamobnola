@@ -41,9 +41,6 @@ export const observer = () => {
         entries.forEach(entry => {
             if (entry.intersectionRatio > .05) {
                 checkWidth();
-                // castMembers.forEach(member => {
-                //     member.style.transform = 'skew(-12deg) translateX(0)';
-                // })
                 castObserver.unobserve(entry.target);
             }
         })
@@ -73,12 +70,16 @@ export const observer = () => {
 
     const options = {
         root: null,
-        threshold: [0.2, 0.8],
+        rootMargin: '-20%',
+        threshold: [0, 1]
     };
+
+    let setTop = 0;
 
     const active = (entries, sectionObserver) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                console.log(entry)
                 const active = entry.target.id;
                 links.forEach(link => {
                     if (link.dataset.id === active) {
