@@ -65,6 +65,11 @@
             &:focus {
                 border-top: .8rem solid $color-white-mid;
             }
+
+            @include responsive(change-menu) {
+                border: 3px solid $color-red;
+            }
+
         }
 
         @include responsive(change-menu) {
@@ -183,8 +188,7 @@
 }
 
 .toggled {
-    overflow: hidden;
-    visibility: hidden;
+    overflow-y: hidden;
 }
 
 body.toggled .navigation {

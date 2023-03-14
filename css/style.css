@@ -875,6 +875,9 @@ section {
       border-top: 0.8rem solid #8a0505; }
       .navigation__item--active:hover, .navigation__item--active:focus {
         border-top: 0.8rem solid #9b9a9a; }
+      @media only screen and (max-width: 42em) {
+        .navigation__item--active {
+          border: 3px solid #8a0505; } }
     @media only screen and (max-width: 42em) {
       .navigation__item {
         display: block;
@@ -958,8 +961,7 @@ section {
     opacity: 1; }
 
 .toggled {
-  overflow: hidden;
-  visibility: hidden; }
+  overflow-y: hidden; }
 
 body.toggled .navigation {
   visibility: visible;
