@@ -128,7 +128,6 @@ export const observer = () => {
 
     const parallax = (entries, headerObserver) => {
         entries.forEach(entry => {
-            console.log(entry)
             if (entry.isIntersecting) {
                 window.addEventListener('scroll', handleScroll);
             } else {

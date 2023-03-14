@@ -1,13 +1,32 @@
 export const tickets_modal = () => {
+    const body = document.querySelector('body');
+    const html =
+        `<section id="tickets" class="tickets mb-large">
+        <div class="tickets__overlay">
+            <span class="tickets__close">&#10006;</span>
+            <img src="images/ripley/brian-boudreaux-9-600.jpg" alt="Carrie at the prom" class="tickets__image">
+            <div class="tickets__text">
+                <h2 class="heading-secondary center-text tickets__heading">Looking for tickets?</h2>
+                <p class="tickets__info">Dates have not yet been chosen. <span class="tickets__span">Be the
+                        first to
+                        know when they are by signing up for our mailing list.</span> </p>
+                <form class="tickets__form" method="POST" action="/subscribe">
+                    <input type="email" name="email" class="tickets__input" placeholder="Email address" required>
+                    <button class="tickets__button submit--btn" type="submit">Submit here</button>
+                </form>
+            </div>
+        </div>
+    </section>`
+
+    body.insertAdjacentHTML('beforeend', html);
+
     const modal = document.querySelector('.tickets');
     const openModal = document.querySelector('.tickets-link');
-    const btnMore = document.querySelector('.btn-more');
-    const closeBtn = document.querySelector('.tickets__close');
     const forms = document.querySelectorAll('form');
-
 
     openModal.addEventListener('click', e => {
         e.preventDefault();
+        console.log('clicked');
         modal.style.left = '0';
     })
 

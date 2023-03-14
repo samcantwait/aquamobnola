@@ -1026,6 +1026,10 @@ section {
     .background-img2 {
       display: none; } }
 
+.main-gallery {
+  position: relative;
+  margin-top: 10rem; }
+
 .subscribed {
   width: 80%;
   margin: 8rem auto; }

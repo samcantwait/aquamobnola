@@ -15,8 +15,9 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname));
 
+const mainScript = 'js/main.js'
 app.get("/", (req, res) => {
-    res.render('index');
+    res.render('index', { script: mainScript });
 });
 
 app.post("/subscribe", async (req, res) => {
@@ -29,11 +30,11 @@ app.post("/contact", async (req, res) => {
     res.redirect('/');
 })
 
+const secondaryScript = 'js/secondary.js'
 app.get("/gallery", async (req, res) => {
-    res.render('pages/gallery');
+    res.render('pages/gallery', { script: secondaryScript });
 })
 
 app.listen(3000, () => {
     console.log('listening on port 3000');
 });
-
