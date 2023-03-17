@@ -43,7 +43,9 @@ export const observer = () => {
 
     const grow = (entries, castObserver) => {
         entries.forEach(entry => {
+            console.log('before observe')
             if (entry.intersectionRatio > .05) {
+                console.log('in observe')
                 checkWidth();
                 castObserver.unobserve(entry.target);
             }
@@ -52,7 +54,8 @@ export const observer = () => {
 
     const castObserver = new IntersectionObserver(grow, {
         root: null,
-        threshold: .3,
+        rootMargin: '10%',
+        threshold: 0.2,
     });
 
     castObserver.observe(sectionMobsters);
@@ -61,10 +64,12 @@ export const observer = () => {
     const checkWidth = () => {
         if (window.innerWidth <= 512) {
             castMembers.forEach(member => {
+                console.log('in mobile')
                 member.style.transform = 'skew(0) translateX(0)';
             })
         } else {
             castMembers.forEach(member => {
+                console.log('in larger')
                 member.style.transform = 'skew(-12deg) translateX(0)';
             })
         }
@@ -80,8 +85,6 @@ export const observer = () => {
         rootMargin: '-20%',
         threshold: [0, 1]
     };
-
-    let setTop = 0;
 
     const active = (entries, sectionObserver) => {
         entries.forEach(entry => {

@@ -14,7 +14,7 @@
         transform: skew(-12deg) translateX(-100vw);
 
         @include responsive(cast) {
-            transform: translateX(0) skew(0);
+            transform: translateX(-100vw) skew(0);
         }
     }
 
@@ -22,7 +22,7 @@
         transform: skew(-12deg) translateX(100vw);
 
         @include responsive(cast) {
-            transform: translateX(0) skew(0);
+            transform: translateX(100vw) skew(0);
         }
     }
 

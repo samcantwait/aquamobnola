@@ -551,12 +551,12 @@ section {
     transform: skew(-12deg) translateX(-100vw); }
     @media only screen and (max-width: 32em) {
       .cast:nth-child(odd) {
-        transform: translateX(0) skew(0); } }
+        transform: translateX(-100vw) skew(0); } }
   .cast:nth-child(even) {
     transform: skew(-12deg) translateX(100vw); }
     @media only screen and (max-width: 32em) {
       .cast:nth-child(even) {
-        transform: translateX(0) skew(0); } }
+        transform: translateX(100vw) skew(0); } }
   .cast > * {
     transform: skewX(12deg); }
     @media only screen and (max-width: 32em) {
