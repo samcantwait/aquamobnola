@@ -1,0 +1,57 @@
+.photo-grid {
+    width: 100%;
+    padding: 2rem;
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 .8rem;
+    }
+
+    /* Create four equal columns that sits next to each other */
+    &__column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 .8rem;
+    }
+
+    &__image {
+        margin-top: 1.6rem;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+    &__load {
+        background-color: transparent;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-size: 1.8rem;
+        margin: 8rem auto;
+
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 0.8rem;
+        }
+
+    }
+}
+
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+// @media screen and (max-width: 800px) {
+//     .column {
+//         flex: 50%;
+//         max-width: 50%;
+//     }
+// }
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+// @media screen and (max-width: 600px) {
+//     .column {
+//         flex: 100%;
+//         max-width: 100%;
+//     }
+// }

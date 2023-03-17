@@ -2,9 +2,25 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mail = require('./app/mail');
 const ejsMate = require('ejs-mate');
+const mysql = require('mysql');
 const path = require('path');
 
 const app = express();
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: process.env.PASS_MYSQL,
+    database: 'aquamobnola_db'
+});
+
+connection.connect(function (err) {
+    if (err) {
+        console.error('error connecting: ' + err.stack);
+        return;
+    }
+    console.log('connected as id ' + connection.threadId);
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,13 +31,12 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname));
 
-const mainScript = 'js/main.js'
 app.get("/", (req, res) => {
-    res.render('index', { script: mainScript });
+    res.render('index');
 });
 
 app.post("/subscribe", async (req, res) => {
-    await mail.subscribe(req.body.email).catch(e => { console.log(e) });
+    const message = await mail.subscribe(req.body.email).catch(e => { console.log(e) });
     res.render('pages/subscribed', { email: req.body.email })
 });
 
@@ -30,10 +45,19 @@ app.post("/contact", async (req, res) => {
     res.redirect('/');
 })
 
-const secondaryScript = 'js/secondary.js'
-app.get("/gallery", async (req, res) => {
-    res.render('pages/gallery', { script: secondaryScript });
-})
+app.get("/gallery/:show", async (req, res) => {
+    const query = `SELECT * FROM photos WHERE show_id =
+        (
+            SELECT id FROM shows
+            WHERE name = '${req.params.show}'
+        );`
+
+    connection.query(query, (error, results, fields) => {
+        if (error) throw error;
+
+        res.render('pages/gallery', { results });
+    })
+});
 
 app.listen(3000, () => {
     console.log('listening on port 3000');

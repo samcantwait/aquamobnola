@@ -4,7 +4,7 @@ export const tickets_modal = () => {
         `<section id="tickets" class="tickets mb-large">
         <div class="tickets__overlay">
             <span class="tickets__close">&#10006;</span>
-            <img src="images/ripley/brian-boudreaux-9-600.jpg" alt="Carrie at the prom" class="tickets__image">
+            <img src="/images/ripley/brian-boudreaux-9-600.jpg" alt="Carrie at the prom" class="tickets__image">
             <div class="tickets__text">
                 <h2 class="heading-secondary center-text tickets__heading">Looking for tickets?</h2>
                 <p class="tickets__info">Dates have not yet been chosen. <span class="tickets__span">Be the

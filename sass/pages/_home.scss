@@ -1,5 +1,6 @@
 section {
     margin: 0;
+    width: 100%;
 }
 
 .header-background {
@@ -8,11 +9,6 @@ section {
     height: 120vh;
     width: 100vw;
     background-color: $color-black;
-}
-
-.happenings {
-    // background-image: radial-gradient(circle at 10% 20%, $color-black 50%, $color-grey-mid);
-    background-color: $color-grey-dark;
 }
 
 .gallery {

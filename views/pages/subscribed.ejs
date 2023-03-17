@@ -1,36 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Aquamob NOLA" />
-    <meta property="og:image" content="images/IMG_8160.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@200;300;400;600;800&family=Roboto:wght@100;300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200;300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="images/aquamob-favicon.svg">
-    <link rel="stylesheet" href="css/style.css">
+<% layout('layout/boilerplate')%>
     <title>Aquamob NOLA</title>
-</head>
+    </head>
 
-<body>
-    <section class="subscribed">
-        <h1 class="subscribed__heading heading--primary">Subscribed!</h1>
-        <p class="subscribed__text">An email has been sent to <%= email %>.
-        </p>
-        <p class="subscribed__text">If you did not receive the email please send a message to <a
-                href="mailto:subscribe@aquamobnola.com" class="subscribed__mailto">subscribe@aquamobnola.com</a> with
-            the
-            email address you would like to have subscribed.</p>
-        <p class="subscribed__text"><a href="/" class="subscribed__return">Return to homepage</a></p>
-    </section>
-</body>
-
-</html>
+    <body>
+        <section class="subscribed">
+            <h1 class="subscribed__heading heading--primary">Subscribed!</h1>
+            <p class="subscribed__text">An email has been sent to <%= email %>.
+            </p>
+            <p class="subscribed__text">If you did not receive the email please send a message to <a
+                    href="mailto:subscribe@aquamobnola.com" class="subscribed__mailto">subscribe@aquamobnola.com</a>
+                with
+                the
+                email address you would like to have subscribed.</p>
+            <p class="subscribed__text"><a href="/" class="subscribed__return">Return to homepage</a></p>
+        </section>
+        <script>console.log(`<%- message %>`)</script>

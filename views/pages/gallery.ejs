@@ -1,5 +1,24 @@
 <% layout('layout/boilerplate')%>
+<title>Aquamob NOLA</title>
+</head>
 
     <section class="main-gallery">
         <h1 class="heading-primary">Photo Gallery</h1>
+        <h2>
+            Work in Progress
+        </h2>
+        <div class="photo-grid">
+            <div class="photo-grid__row">
+                <div class="photo-grid__column photo-grid__column-1"></div>
+                <div class="photo-grid__column photo-grid__column-2"></div>
+                <div class="photo-grid__column photo-grid__column-3"></div>
+                <div class="photo-grid__column photo-grid__column-4"></div>
+            </div>
+
+            <button class="photo-grid__load">Load more...</button>
+        </div>
     </section>
+    <script>
+        var results = <%- JSON.stringify(results) %>;
+    </script>
+    <script src="/js/mainGallery.js"></script>
