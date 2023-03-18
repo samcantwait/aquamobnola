@@ -1,6 +1,6 @@
 <% layout('layout/boilerplate')%>
-<title>Aquamob NOLA</title>
-</head>
+    <title>Aquamob NOLA</title>
+    </head>
 
     <section class="main-gallery">
         <h1 class="heading-primary">Photo Gallery</h1>
@@ -17,8 +17,16 @@
 
             <button class="photo-grid__load">Load more...</button>
         </div>
+        <div class="photo-grid__modal">
+            <div class="photo-grid__prev photo-grid__button">&lt;</div>
+            <div class="photo-grid__next photo-grid__button">&gt;</div>
+            <div class="photo-grid__container">
+                <img src="/images/ripley/brian-boudreaux-69-600.jpg" alt="" class="photo-grid__image--large">
+            </div>
+        </div>
     </section>
     <script>
         var results = <%- JSON.stringify(results) %>;
+        console.log(results)
     </script>
     <script src="/js/mainGallery.js"></script>

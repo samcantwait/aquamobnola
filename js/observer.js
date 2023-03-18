@@ -6,7 +6,7 @@ export const observer = () => {
 
     const moveUp = (entries, showObserver) => {
         entries.forEach(entry => {
-            if (entry.intersectionRatio > .05) {
+            if (entry.isIntersecting) {
                 photos.forEach((photo, index) => {
                     if (index === 1) {
                         setTimeout(() => {
@@ -31,7 +31,8 @@ export const observer = () => {
 
     const showObserver = new IntersectionObserver(moveUp, {
         root: null,
-        threshold: .2,
+        rootMargin: '-30%',
+        threshold: 0,
     });
 
     showObserver.observe(sectionShow);
@@ -44,7 +45,7 @@ export const observer = () => {
     const grow = (entries, castObserver) => {
         entries.forEach(entry => {
             console.log('before observe')
-            if (entry.intersectionRatio > .05) {
+            if (entry.isIntersecting) {
                 console.log('in observe')
                 checkWidth();
                 castObserver.unobserve(entry.target);
@@ -54,8 +55,8 @@ export const observer = () => {
 
     const castObserver = new IntersectionObserver(grow, {
         root: null,
-        rootMargin: '10%',
-        threshold: 0.2,
+        rootMargin: '-50%',
+        threshold: 0,
     });
 
     castObserver.observe(sectionMobsters);

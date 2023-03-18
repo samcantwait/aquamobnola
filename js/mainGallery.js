@@ -1,4 +1,4 @@
-
+const photoGrid = document.querySelector('.photo-grid');
 const loadMore = document.querySelector('.photo-grid__load');
 let i = 1;
 function postPhotos() {
@@ -18,4 +18,8 @@ postPhotos();
 
 loadMore.addEventListener('click', () => {
     if (results) postPhotos();
+})
+
+photoGrid.addEventListener('click', e => {
+    console.log(e.target)
 })

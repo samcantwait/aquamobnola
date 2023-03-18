@@ -59,3 +59,35 @@
     clip-path: polygon(0 22vh, 0 calc(100% - 2vh), 100% calc(100% - 17vh), 100% 6vh);
     z-index: 6;
 }
+
+// .rotate {
+//     position: relative;
+//     margin: 17vh 0;
+//     transform-style: preserve-3d;
+//     width: 100vw;
+//     z-index: 4000;
+
+//     &::before {
+//         content: '';
+//         position: absolute;
+//         height: calc(100% + 20vh);
+//         width: 150%;
+//         top: -10vh;
+//         left: -25%;
+//         padding: 10vh 0;
+//         background-color: $color-red-blood;
+//         transform: translateZ(-2px) rotate(-5deg);
+//     }
+
+//     &::after {
+//         content: '';
+//         position: absolute;
+//         height: calc(100% + 14vh);
+//         width: 150%;
+//         top: -7vh;
+//         left: -25%;
+//         padding: 7vh 0;
+//         background-color: inherit;
+//         transform: translateZ(-1px) rotate(-3deg);
+//     }
+// }
