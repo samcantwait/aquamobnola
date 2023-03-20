@@ -4,9 +4,27 @@
 
     <section class="main-gallery">
         <h1 class="heading-primary">Photo Gallery</h1>
-        <h2>
-            Work in Progress
-        </h2>
+        <div class="main-gallery__title-bar">
+            <h2 class="main-gallery__heading">
+                Work in Progress
+            </h2>
+            <form action="/gallery" class="main-gallery__form" method="POST">
+                <label for="sort-select" class="main-gallery__label">View photos by: </label>
+                <select name="sort" id="sort-select" class="main-gallery__select" required>
+                    <option value="" class="main-gallery__option main-gallery__option-title">Show</option>
+                    <option value="show=true&name=suspiriacgua" class="main-gallery__option">SuspiriAcgua</option>
+                    <option value="show=true&name=ripley" class="main-gallery__option">Ripley and the Cat</option>
+                    <option value="" class="main-gallery__option main-gallery__option-title">Photographer</option>
+                    <option value="name=brian boudreaux" class="main-gallery__option">Brian Boudreaux</option>
+                    <option value="name=raymond rehage" class="main-gallery__option">Raymond Rehage</option>
+                    <option value="name=eli mergel" class="main-gallery__option">Eli Mergel</option>
+                    <option value="name=madeline corcoran" class="main-gallery__option">Madeline Corcoran</option>
+                    <option value="name=jessie craner" class="main-gallery__option">Jessie Craner</option>
+                    <option value="name=will frank" class="main-gallery__option">Will Frank</option>
+                </select>
+                <button class="main-gallery__submit">Go</button>
+            </form>
+        </div>
         <div class="photo-grid">
             <div class="photo-grid__row">
                 <div class="photo-grid__column photo-grid__column-1"></div>
@@ -20,13 +38,10 @@
         <div class="photo-grid__modal">
             <div class="photo-grid__prev photo-grid__button">&lt;</div>
             <div class="photo-grid__next photo-grid__button">&gt;</div>
-            <div class="photo-grid__container">
-                <img src="/images/ripley/brian-boudreaux-69-600.jpg" alt="" class="photo-grid__image--large">
-            </div>
+            <div class="photo-grid__close">&#10006;</div>
         </div>
     </section>
     <script>
         var results = <%- JSON.stringify(results) %>;
-        console.log(results)
     </script>
     <script src="/js/mainGallery.js"></script>

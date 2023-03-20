@@ -1,0 +1,18 @@
+.main-gallery {
+    width: 100%;
+
+    &__title-bar {
+        width: 100%;
+        display: flex;
+    }
+
+    &__heading {
+        display: inline-block;
+        margin-right: auto;
+    }
+
+    &__form {
+        display: inline-block;
+        margin-left: auto;
+    }
+}

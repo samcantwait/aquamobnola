@@ -68,7 +68,8 @@
 
         &:hover {
             z-index: 20;
-            transform: scale(1.2) translateY(-20px);
+            transition: all .5s !important;
+            transform: scale(1.2) translateY(-20px) !important;
             border: 1rem solid $color-red-dark;
         }
 

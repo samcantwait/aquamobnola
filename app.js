@@ -9,6 +9,7 @@ const app = express();
 
 const connection = mysql.createConnection({
     host: 'localhost',
+    // user: 'sam',
     user: 'root',
     password: process.env.PASS_MYSQL,
     database: 'aquamobnola_db'
@@ -45,19 +46,26 @@ app.post("/contact", async (req, res) => {
     res.redirect('/');
 })
 
-app.get("/gallery/:show", async (req, res) => {
-    const query = `SELECT * FROM photos WHERE show_id =
+app.get('/gallery/', async (req, res) => {
+    const show = req.query.show ? req.query.show : false;
+    const name = req.query.name;
+    const query = name === 'all' ? `SELECT url_large, url_thumb, photographers.name, alt_text, is_long FROM photos JOIN photographers ON photos.photographer_id = photographers.id;` :
+        `SELECT url_large, url_thumb, photographers.name, alt_text, is_long FROM photos 
+    JOIN photographers ON photos.photographer_id = photographers.id 
+    WHERE ${show ? 'show_id' : 'photographer_id'} = 
         (
-            SELECT id FROM shows
-            WHERE name = '${req.params.show}'
+            SELECT id FROM ${show ? 'shows' : 'photographers'} 
+            WHERE name = '${name}'
         );`
-
     connection.query(query, (error, results, fields) => {
         if (error) throw error;
-
-        res.render('pages/gallery', { results });
+        res.render('pages/gallery', { results })
     })
-});
+})
+
+app.post("/gallery", async (req, res) => {
+    res.redirect(`/gallery/?${req.body.sort}`);
+})
 
 app.listen(3000, () => {
     console.log('listening on port 3000');

@@ -119,7 +119,7 @@ section {
 .heading-tertiary {
   color: #fff;
   font-weight: 400;
-  font-size: 2rem; }
+  font-size: 2.6rem; }
   @media only screen and (max-width: 25.876em) {
     .heading-tertiary {
       font-size: 2rem; } }
@@ -621,7 +621,8 @@ section {
   .photo-grid__image {
     margin-top: 1.6rem;
     vertical-align: middle;
-    width: 100%; }
+    width: 100%;
+    cursor: pointer; }
     .photo-grid__image--large {
       width: 100%;
       height: 100%;
@@ -638,6 +639,7 @@ section {
       text-decoration: underline;
       text-underline-offset: 0.8rem; }
   .photo-grid__modal {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -652,19 +654,37 @@ section {
     transform: translateY(-50%);
     font-size: 8rem;
     color: rgba(255, 255, 255, 0.5);
+    z-index: 5;
     cursor: pointer; }
   .photo-grid__prev {
     left: 2rem; }
   .photo-grid__next {
     right: 2rem; }
+  .photo-grid__close {
+    position: absolute;
+    top: 2rem;
+    right: 6%;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 5;
+    cursor: pointer; }
+  .photo-grid__wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s; }
   .photo-grid__container {
     display: block;
     width: 70%;
-    height: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
+    height: auto;
+    max-height: 80%; }
+  .photo-grid__credit {
+    text-align: center; }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -718,7 +738,8 @@ section {
       left: 20%; }
     .show__photos:hover {
       z-index: 20;
-      transform: scale(1.2) translateY(-20px);
+      transition: all .5s !important;
+      transform: scale(1.2) translateY(-20px) !important;
       border: 1rem solid #3d0000; }
     @media only screen and (max-width: 32em) {
       .show__photos {
@@ -1080,6 +1101,18 @@ section {
 .main-gallery {
   position: relative;
   margin-top: 10rem; }
+
+.main-gallery {
+  width: 100%; }
+  .main-gallery__title-bar {
+    width: 100%;
+    display: flex; }
+  .main-gallery__heading {
+    display: inline-block;
+    margin-right: auto; }
+  .main-gallery__form {
+    display: inline-block;
+    margin-left: auto; }
 
 .subscribed {
   width: 80%;

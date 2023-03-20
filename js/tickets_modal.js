@@ -4,13 +4,13 @@ export const tickets_modal = () => {
         `<section id="tickets" class="tickets mb-large">
         <div class="tickets__overlay">
             <span class="tickets__close">&#10006;</span>
-            <img src="/images/ripley/brian-boudreaux-9-600.jpg" alt="Carrie at the prom" class="tickets__image">
+            <img src="/images/ripley/brian-boudreaux/brian-boudreaux-9-600.webp" alt="Synchronized swimmers" class="tickets__image">
             <div class="tickets__text">
                 <h2 class="heading-secondary center-text tickets__heading">Looking for tickets?</h2>
                 <p class="tickets__info">Dates have not yet been chosen. <span class="tickets__span">Be the
                         first to
                         know when they are by signing up for our mailing list.</span> </p>
-                <form class="tickets__form" method="POST" action="/subscribe">
+                <form class="tickets__form index__form" method="POST" action="/subscribe">
                     <input type="email" name="email" class="tickets__input" placeholder="Email address" required>
                     <button class="tickets__button submit--btn" type="submit">Submit here</button>
                 </form>
@@ -22,7 +22,7 @@ export const tickets_modal = () => {
 
     const modal = document.querySelector('.tickets');
     const openModal = document.querySelector('.tickets-link');
-    const forms = document.querySelectorAll('form');
+    const forms = document.querySelectorAll('.index__form');
 
     openModal.addEventListener('click', e => {
         e.preventDefault();
