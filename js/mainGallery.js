@@ -3,7 +3,26 @@ const loadMore = document.querySelector('.photo-grid__load');
 const photoModal = document.querySelector('.photo-grid__modal');
 const previous = document.querySelector('.photo-grid__prev');
 const next = document.querySelector('.photo-grid__next');
-console.log(results)
+let startingWidth = window.innerWidth;
+
+let columns = 4;
+const findColumns = () => {
+    if (window.innerWidth < 900) {
+        photoGrid.style.setProperty('--columns', '2');
+        columns = 2;
+    }
+    if (window.innerWidth < 512) {
+        photoGrid.style.setProperty('--columns', '1');
+        columns = 1;
+    }
+}
+findColumns();
+
+window.addEventListener('resize', () => {
+    if ((window.innerWidth < 900 && 900 < startingWidth) || (window.innerWidth < 512 && 512 < startingWidth) || (window.innerWidth > 512 && 512 > startingWidth) || (window.innerWidth > 900 && 900 > startingWidth)) {
+        location.reload();
+    }
+})
 
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
@@ -14,9 +33,22 @@ function shuffle(array) {
     }
     return array;
 }
-
 results = shuffle(results);
 
+// results.forEach((photo, index) => {
+//     if (photo.is_long === 'true') {
+//         results.push(results.splice(index, 1)[0]);
+//     }
+// })
+
+// <div class="photo-grid__column photo-grid__column-1"></div>
+let n = 1
+while (n <= columns) {
+    const newColumn = document.createElement('div');
+    newColumn.classList.add('photo-grid__column', `photo-grid__column-${n}`);
+    photoGrid.appendChild(newColumn);
+    n++;
+}
 
 const resultsCopySmall = [...results];
 const resultsCopyLarge = [...results];
@@ -28,16 +60,8 @@ function postSmallPhotos() {
         image.setAttribute('src', `${item.url_thumb}`);
         image.setAttribute('alt', `${item.alt_text}`);
         image.classList.add('photo-grid__image');
-        if (skip === i) {
-            if (i === 4) { i = 0 };
-            i++;
-            skip = -1
-        }
-        if (item.is_long === 'true') {
-            skip = i;
-        }
         document.querySelector(`.photo-grid__column-${i}`).appendChild(image);
-        if (i >= 4) i = 1;
+        if (i >= columns) i = 1;
         else i++;
     })
     if (resultsCopySmall.length < 1) { loadMore.style.display = 'none' };
