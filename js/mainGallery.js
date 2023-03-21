@@ -7,7 +7,7 @@ let startingWidth = window.innerWidth;
 
 let columns = 4;
 const findColumns = () => {
-    if (window.innerWidth < 900) {
+    if (window.innerWidth < 950) {
         photoGrid.style.setProperty('--columns', '2');
         columns = 2;
     }
@@ -19,7 +19,7 @@ const findColumns = () => {
 findColumns();
 
 window.addEventListener('resize', () => {
-    if ((window.innerWidth < 900 && 900 < startingWidth) || (window.innerWidth < 512 && 512 < startingWidth) || (window.innerWidth > 512 && 512 > startingWidth) || (window.innerWidth > 900 && 900 > startingWidth)) {
+    if ((window.innerWidth < 950 && 950 < startingWidth) || (window.innerWidth < 512 && 512 < startingWidth) || (window.innerWidth > 512 && 512 > startingWidth) || (window.innerWidth > 950 && 950 > startingWidth)) {
         location.reload();
     }
 })
@@ -120,6 +120,7 @@ loadMore.addEventListener('click', () => {
 })
 
 photoGrid.addEventListener('click', e => {
+    if (window.innerWidth < 512) return;
     if (!e.target.classList.contains('photo-grid__image')) return;
     const compare = item => item.url_thumb == e.target.getAttribute('src');
     currentPhoto = results.findIndex(compare);
