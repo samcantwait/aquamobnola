@@ -51,11 +51,13 @@ app.get('/gallery/', async (req, res) => {
     let name = req.query.name;
     connection.query('SELECT name FROM photographers;', (error, results, fields) => {
         const photographers = [];
+        const allPhotographers = results;
         results.forEach(result => photographers.push(result.name.toLowerCase()));
         photographers.push('all');
 
-        connection.query('SELECT name FROM shows;', (error, results, fields) => {
+        connection.query('SELECT name, full_name FROM shows;', (error, results, fields) => {
             const shows = [];
+            const allShows = results;
             results.forEach(result => shows.push(result.name.toLowerCase()));
 
             if (show && shows.indexOf(name) === -1) {
@@ -82,7 +84,7 @@ app.get('/gallery/', async (req, res) => {
 
             connection.query(query, (error, results, fields) => {
                 if (error) throw error;
-                res.render('pages/gallery', { results })
+                res.render('pages/gallery', { results, allShows, allPhotographers, name, show })
             })
         })
     })

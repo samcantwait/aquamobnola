@@ -1,6 +1,6 @@
 .photo-grid {
 
-    padding: 2rem;
+    // padding: 2rem;
     display: grid;
     align-items: start;
     grid-template-columns: repeat(var(--columns), minmax(0, 1fr));

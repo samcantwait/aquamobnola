@@ -3,8 +3,35 @@ const loadMore = document.querySelector('.photo-grid__load');
 const photoModal = document.querySelector('.photo-grid__modal');
 const previous = document.querySelector('.photo-grid__prev');
 const next = document.querySelector('.photo-grid__next');
+const heading = document.querySelector('.main-gallery__heading');
+const links = document.querySelectorAll('.navigation__item');
+
 let startingWidth = window.innerWidth;
-console.log(results)
+console.log(show, setName)
+
+links.forEach(link => {
+    console.log(link.getAttribute('data-id'))
+    if (link.getAttribute('data-id') == 'gallery') {
+        link.classList.add('navigation__item--active')
+    }
+})
+
+if (show) {
+    allShows.forEach(show => {
+        if (show.name === setName) {
+            heading.innerText = show.full_name;
+        }
+    })
+} else {
+    allPhotographers.forEach(photographer => {
+        if (setName === 'all') {
+            heading.innerText = 'All Photos';
+        }
+        if (photographer.name.toLowerCase() === setName) {
+            heading.innerText = photographer.name;
+        }
+    })
+}
 
 let columns = 4;
 const findColumns = () => {

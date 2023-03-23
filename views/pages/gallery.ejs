@@ -6,28 +6,30 @@
         <h1 class="heading-primary">Photo Gallery</h1>
         <div class="main-gallery__title-bar">
             <h2 class="main-gallery__heading">
-                Work in Progress
             </h2>
-            <form action="/gallery" class="main-gallery__form" method="POST">
+            <form action="/gallery" class="main-gallery__form custom-select" method="POST">
                 <label for="sort-select" class="main-gallery__label">View photos by: </label>
                 <select name="sort" id="sort-select" class="main-gallery__select" required>
                     <option value="name=all" class="main-gallery__option">All photos</option>
                     <option value="" class="main-gallery__option main-gallery__option-title">Show</option>
-                    <option value="show=true&name=suspiriacqua" class="main-gallery__option">SuspiriAcqua</option>
-                    <option value="show=true&name=ripley" class="main-gallery__option">Ripley and the Cat</option>
-                    <option value="" class="main-gallery__option main-gallery__option-title">Photographer</option>
-                    <option value="name=brian boudreaux" class="main-gallery__option">Brian Boudreaux</option>
-                    <option value="name=raymond rehage" class="main-gallery__option">Raymond Rehage</option>
-                    <option value="name=eli mergel" class="main-gallery__option">Eli Mergel</option>
-                    <option value="name=madeline corcoran" class="main-gallery__option">Madeline Corcoran</option>
-                    <option value="name=jessie craner" class="main-gallery__option">Jessie Craner</option>
-                    <option value="name=will frank" class="main-gallery__option">Will Frank</option>
+                    <% allShows.forEach(show=> { %>
+                        <option value="show=true&name=<%= show.name %>" class="main-gallery__option">
+                            <%= show.full_name %>
+                        </option>
+                        <% }) %>
+                        <option value="" class="main-gallery__option main-gallery__option-title">Photographer
+                        </option>
+                        <% allPhotographers.forEach(photographer=> { %>
+                            <option value="name=<%= photographer.name.toLowerCase() %>" class="main-gallery__option">
+                                <%= photographer.name %>
+                            </option>
+                            <% }) %>
                 </select>
                 <button class="main-gallery__submit">Go</button>
             </form>
         </div>
         <div class="photo-grid">
-            
+
         </div>
         <button class="photo-grid__load">Load more...</button>
         <div class="photo-grid__modal">
@@ -38,5 +40,9 @@
     </section>
     <script>
         var results = <%- JSON.stringify(results) %>;
+        var show = <%- show %>;
+        var setName = `<%- name %>`;
+        var allShows = <%- JSON.stringify(allShows) %>;
+        var allPhotographers = <%- JSON.stringify(allPhotographers) %>;
     </script>
     <script src="/js/mainGallery.js"></script>

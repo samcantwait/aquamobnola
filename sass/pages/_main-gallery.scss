@@ -1,9 +1,18 @@
 .main-gallery {
     width: 100%;
+    padding: 2rem;
 
     &__title-bar {
         width: 100%;
         display: flex;
+
+        @include responsive(change-menu) {
+            flex-direction: column;
+        }
+
+        @include responsive(phone) {
+            font-size: 60%;
+        }
     }
 
     &__heading {
@@ -14,5 +23,41 @@
     &__form {
         display: inline-block;
         margin-left: auto;
+        position: relative;
     }
+
+    &__select {
+        padding: .5rem;
+        font-family: inherit;
+        border: 1px solid $color-white-dark;
+        border-radius: 2px;
+    }
+
+    &__option {
+        &-title {
+            font-weight: 800;
+            font-size: 1.4rem;
+        }
+    }
+
+    &__label {
+        @include responsive(phone) {
+            display: block;
+            margin: 1rem 0 0 auto;
+        }
+    }
+
+    &__submit {
+        font-family: inherit;
+        font-weight: 600;
+        padding: .8rem 2rem;
+        border: none;
+        background-color: $color-white-light;
+
+        &:hover {
+            background-color: $color-red-blood;
+            color: $color-white;
+        }
+    }
+
 }
