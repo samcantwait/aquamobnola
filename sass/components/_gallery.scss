@@ -17,6 +17,40 @@
         }
     }
 
+    &__grid--small {
+        display: grid;
+        width: 85%;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: repeat(2, 15vw);
+        gap: 1rem;
+        margin: 5rem auto;
+
+        @include responsive(change-menu) {
+            grid-template-rows: repeat(2, 25vw);
+            width: 100%;
+            gap: 0;
+            margin: 5rem 2px;
+            width: calc(100% - 4px);
+        }
+    }
+
+    &__item--small {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 1px solid $color-white;
+        transition: all .5s;
+
+        &:hover,
+        &:focus {
+            transform: scale(1.5);
+
+            @include responsive(change-menu) {
+                transform: none !important;
+            }
+        }
+    }
+
     &__text {
         display: block;
         text-align: center;
@@ -40,7 +74,7 @@
 
         &:hover,
         &:focus {
-            transform: scale(1.5);
+            transform: scale(1.25);
 
             @include responsive(change-menu) {
                 transform: none !important;
@@ -58,9 +92,9 @@
         &--3 {
             grid-area: 3 / 3 / 5 / 4;
 
-            &:hover {
-                transform: scale(2.2);
-            }
+            // &:hover {
+            //     transform: scale(1.5);
+            // }
         }
 
         &--4 {
@@ -76,9 +110,9 @@
             grid-area: 5 / 1 / 8 / 4;
             object-position: top;
 
-            &:hover {
-                transform: scale(1.3);
-            }
+            // &:hover {
+            //     transform: scale(1.05);
+            // }
         }
 
         &--7 {
@@ -89,16 +123,16 @@
             grid-area: 3 / 4 / 4 / 5;
 
             &:hover {
-                transform: scale(2.5);
+                transform: scale(1.6);
             }
         }
 
         &--9 {
             grid-area: 3 / 6 / 6 / 9;
 
-            &:hover {
-                transform: scale(1.3);
-            }
+            // &:hover {
+            //     transform: scale(1.05);
+            // }
         }
 
         &--10 {
@@ -125,41 +159,41 @@
             grid-area: 1 / 4 / 5 / 6;
             object-position: left;
 
-            &:hover {
-                transform: scale(1.3);
-            }
+            // &:hover {
+            //     transform: scale(1.05);
+            // }
         }
 
         &--4a {
             grid-area: 1 / 6 / 4 / 9;
 
-            &:hover {
-                transform: scale(1.3);
-            }
+            // &:hover {
+            //     transform: scale(1.05);
+            // }
         }
 
         &--5a {
             grid-area: 3 / 1 / 6 / 4;
 
-            &:hover {
-                transform: scale(1.3);
-            }
+            // &:hover {
+            //     transform: scale(1.05);
+            // }
         }
 
         &--6a {
             grid-area: 4 / 6 / 6 / 7;
             object-position: top;
 
-            &:hover {
-                transform: scale(2);
-            }
+            // &:hover {
+            //     transform: scale(1.5);
+            // }
         }
 
         &--7a {
             grid-area: 5 / 5 / 6 / 6;
 
             &:hover {
-                transform: scale(3);
+                transform: scale(1.6);
             }
         }
 
@@ -170,9 +204,9 @@
         &--9a {
             grid-area: 6 / 3 / 8 / 4;
 
-            &:hover {
-                transform: scale(1.4);
-            }
+            // &:hover {
+            //     transform: scale(1.1);
+            // }
         }
 
         &--10a {
@@ -186,9 +220,9 @@
         &--12a {
             grid-area: 4 / 7 / 8 / 9;
 
-            &:hover {
-                transform: scale(1.3);
-            }
+            // &:hover {
+            //     transform: scale(1.05);
+            // }
         }
     }
 }

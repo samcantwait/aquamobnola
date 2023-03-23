@@ -4,6 +4,7 @@ const photoModal = document.querySelector('.photo-grid__modal');
 const previous = document.querySelector('.photo-grid__prev');
 const next = document.querySelector('.photo-grid__next');
 let startingWidth = window.innerWidth;
+console.log(results)
 
 let columns = 4;
 const findColumns = () => {
@@ -11,15 +12,15 @@ const findColumns = () => {
         photoGrid.style.setProperty('--columns', '2');
         columns = 2;
     }
-    if (window.innerWidth < 512) {
-        photoGrid.style.setProperty('--columns', '1');
-        columns = 1;
-    }
+    // if (window.innerWidth < 512) {
+    //     photoGrid.style.setProperty('--columns', '1');
+    //     columns = 1;
+    // }
 }
 findColumns();
 
 window.addEventListener('resize', () => {
-    if ((window.innerWidth < 950 && 950 < startingWidth) || (window.innerWidth < 512 && 512 < startingWidth) || (window.innerWidth > 512 && 512 > startingWidth) || (window.innerWidth > 950 && 950 > startingWidth)) {
+    if ((window.innerWidth < 950 && 950 < startingWidth) || (window.innerWidth > 950 && 950 > startingWidth)) {
         location.reload();
     }
 })
@@ -41,7 +42,6 @@ results = shuffle(results);
 //     }
 // })
 
-// <div class="photo-grid__column photo-grid__column-1"></div>
 let n = 1
 while (n <= columns) {
     const newColumn = document.createElement('div');
@@ -53,16 +53,30 @@ while (n <= columns) {
 const resultsCopySmall = [...results];
 const resultsCopyLarge = [...results];
 let i = 1;
-let skip;
+let skip, colHeight = 0;
 function postSmallPhotos() {
+    const findColumns = document.querySelectorAll('.photo-grid__column');
     resultsCopySmall.splice(0, 16).forEach(item => {
         const image = document.createElement('img');
-        image.setAttribute('src', `${item.url_thumb}`);
+        image.setAttribute('srcset', `${item.url_600} 600w, ${item.url_350} 350w`);
+        image.setAttribute('sizes', '50vw');
+        image.setAttribute('src', `${item.url_600}`);
         image.setAttribute('alt', `${item.alt_text}`);
         image.classList.add('photo-grid__image');
+        if (i === skip) {
+            i++;
+            if (i > columns) i = 1;
+            skip = -1;
+        }
         document.querySelector(`.photo-grid__column-${i}`).appendChild(image);
+        if (item.is_long === 'true') {
+            skip = i;
+        }
         if (i >= columns) i = 1;
         else i++;
+        // findColumns.forEach(col => {
+        //     if (col.getBoundingClientRect().height > colHeight + 10);
+        // })
     })
     if (resultsCopySmall.length < 1) { loadMore.style.display = 'none' };
 }
@@ -78,7 +92,9 @@ function postLargePhotos() {
         const container = document.createElement('div');
         container.classList.add('photo-grid__container');
         const image = document.createElement('img');
-        image.setAttribute('src', `${item.url_large}`);
+        image.setAttribute('srcset', `${item.url_600} 600w, ${item.url_2000} 2000w`)
+        image.setAttribute('sizes', '90vw');
+        image.setAttribute('src', `${item.url_600}`);
         image.setAttribute('alt', `${item.alt_text}`);
         image.classList.add('photo-grid__image--large');
         const credit = document.createElement('p');
@@ -120,9 +136,9 @@ loadMore.addEventListener('click', () => {
 })
 
 photoGrid.addEventListener('click', e => {
-    if (window.innerWidth < 512) return;
+    // if (window.innerWidth < 512) return;
     if (!e.target.classList.contains('photo-grid__image')) return;
-    const compare = item => item.url_thumb == e.target.getAttribute('src');
+    const compare = item => item.url_600 == e.target.getAttribute('src');
     currentPhoto = results.findIndex(compare);
     slide(currentPhoto);
     photoModal.style.display = 'block';

@@ -47,19 +47,44 @@ app.post("/contact", async (req, res) => {
 })
 
 app.get('/gallery/', async (req, res) => {
-    const show = req.query.show ? req.query.show : false;
-    const name = req.query.name;
-    const query = name === 'all' ? `SELECT url_large, url_thumb, photographers.name, alt_text, is_long FROM photos JOIN photographers ON photos.photographer_id = photographers.id;` :
-        `SELECT url_large, url_thumb, photographers.name, alt_text, is_long FROM photos 
-    JOIN photographers ON photos.photographer_id = photographers.id 
-    WHERE ${show ? 'show_id' : 'photographer_id'} = 
-        (
-            SELECT id FROM ${show ? 'shows' : 'photographers'} 
-            WHERE name = '${name}'
-        );`
-    connection.query(query, (error, results, fields) => {
-        if (error) throw error;
-        res.render('pages/gallery', { results })
+    let show = req.query.show ? req.query.show : false;
+    let name = req.query.name;
+    connection.query('SELECT name FROM photographers;', (error, results, fields) => {
+        const photographers = [];
+        results.forEach(result => photographers.push(result.name.toLowerCase()));
+        photographers.push('all');
+
+        connection.query('SELECT name FROM shows;', (error, results, fields) => {
+            const shows = [];
+            results.forEach(result => shows.push(result.name.toLowerCase()));
+
+            if (show && shows.indexOf(name) === -1) {
+                show = false;
+                name = 'all';
+            }
+
+            if (!show && photographers.indexOf(name) === -1) {
+                show = false;
+                name = 'all';
+            }
+
+
+
+            const query = name === 'all' ?
+                `SELECT url_350, url_600, url_2000, photographers.name, alt_text, is_long FROM photos JOIN photographers ON photos.photographer_id = photographers.id;` :
+                `SELECT url_350, url_600, url_2000, photographers.name, alt_text, is_long FROM photos 
+                JOIN photographers ON photos.photographer_id = photographers.id 
+                WHERE ${show ? 'show_id' : 'photographer_id'} = 
+                    (
+                        SELECT id FROM ${show ? 'shows' : 'photographers'} 
+                        WHERE name = '${name}'
+                    );`
+
+            connection.query(query, (error, results, fields) => {
+                if (error) throw error;
+                res.render('pages/gallery', { results })
+            })
+        })
     })
 })
 
