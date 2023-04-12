@@ -1,0 +1,199 @@
+.navigation {
+    position: fixed;
+    top: 0;
+    background-color: $color-grey-mid;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 4005;
+
+    @include responsive(change-menu) {
+        // min-height: 100%;
+    }
+
+    &__container {
+        height: 100%;
+        max-height: 100vh;
+        width: 100%;
+    }
+
+    &__list {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: flex-end;
+        padding-right: 4rem;
+
+        @include responsive(change-menu) {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            list-style: none;
+            text-align: center;
+            width: 100%;
+            z-index: 1500;
+            padding-right: 0;
+            transition: all 1s;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+        height: 100%;
+        padding: 1.2rem 1.2rem 1.6rem 1.2rem;
+        border-top: .8rem solid transparent;
+        transition: transform .5s;
+
+        &:hover,
+        &:focus {
+            border-top: .8rem solid $color-white-mid;
+        }
+
+        &:hover .navigation__link,
+        &:focus .navigation__link {
+            color: $color-red;
+        }
+
+        &--active {
+            border-top: .8rem solid $color-red;
+
+            &:hover,
+            &:focus {
+                border-top: .8rem solid $color-white-mid;
+            }
+
+            @include responsive(change-menu) {
+                border: 3px solid $color-red;
+            }
+
+        }
+
+        @include responsive(change-menu) {
+            display: block;
+            opacity: 0;
+            height: auto;
+            padding: .7rem;
+            width: 30%;
+            margin: 0 auto;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+
+        @include responsive(change-menu) {
+            display: block;
+        }
+    }
+
+    &__button {
+        display: none;
+        background-color: $color-grey-dark;
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top: 1rem;
+        right: 3rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba($color-white, .1);
+        text-align: center;
+        cursor: pointer;
+
+        @include responsive(change-menu) {
+            display: block;
+        }
+    }
+
+    &__background {
+        display: none;
+        background-image: radial-gradient($color-grey-dark, $color-grey-light);
+        height: 6rem;
+        width: 6rem;
+        position: fixed;
+        top: 1.5rem;
+        right: 3.5rem;
+        border-radius: 50%;
+        z-index: 1000;
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+
+        @include responsive(change-menu) {
+            display: block;
+        }
+    }
+
+    &__icon {
+        width: 3rem;
+        height: .6rem;
+        border-radius: 10rem;
+        background-color: $color-white;
+        z-index: 50;
+        margin-top: 3.5rem;
+        transform: translate(-50%, -50%);
+
+        &,
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 3rem;
+            height: .6rem;
+            border-radius: 10rem;
+            background-color: $color-white;
+            transition: all .2s;
+        }
+
+        &::before {
+            top: -1rem;
+            left: 0;
+        }
+
+        &::after {
+            top: 1rem;
+            left: 0;
+        }
+    }
+
+    &__toggled &__background {
+        transform: scale(30);
+    }
+
+    &__toggled &__button &__icon {
+        background-color: transparent;
+    }
+
+    &__toggled &__button &__icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &__toggled &__button &__icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+    &__toggled &__list {
+        transform: translateX(-100%);
+    }
+
+    &__toggled &__item {
+        opacity: 1;
+    }
+}
+
+.toggled {
+    overflow-y: hidden;
+}
+
+body.toggled .navigation {
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+}

@@ -1,0 +1,116 @@
+.tickets {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5000;
+    background-color: rgba($color-red-blood, 0.5);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    color: $color-black;
+    transition: all .5s;
+
+    &__overlay {
+        position: relative;
+        width: 80%;
+        height: 60%;
+        background-color: $color-white;
+        display: flex;
+
+
+        @include responsive(change-menu) {
+            width: 95%;
+        }
+
+        @include responsive(cast) {
+            width: 100%;
+            flex-direction: column;
+            height: auto;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        cursor: pointer;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        padding: 2rem;
+    }
+
+    &__span {
+        display: block;
+    }
+
+    &__image {
+        margin: 2rem;
+        max-width: 50%;
+
+        @include responsive(cast) {
+            content: url('/images/carrie.svg');
+            max-width: none;
+            width: calc(100% - 4rem);
+        }
+    }
+
+    &__heading {
+        color: currentColor;
+        align-self: center;
+        padding: 0;
+        margin: 0;
+
+        @include responsive(tab-port) {
+            font-size: 3rem;
+        }
+
+        @include responsive(change-menu) {
+            font-size: 2rem;
+        }
+
+    }
+
+    &__info {
+        margin: 2rem;
+        font-weight: 500;
+        font-size: 1.6rem;
+        width: 80%;
+
+
+        @include responsive(change-menu) {
+            font-size: 1.3rem;
+        }
+    }
+
+    &__button {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        background-image: linear-gradient(to right, $color-red-blood, $color-red-dark);
+        color: $color-white;
+        border: none;
+        font-size: 1.6rem;
+    }
+
+    &__form {
+        width: 80%;
+    }
+
+    &__input {
+        padding: 1rem;
+        margin: 1rem 0;
+        width: 100%;
+        font-size: 1.6rem;
+    }
+
+}

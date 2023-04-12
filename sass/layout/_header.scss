@@ -1,0 +1,48 @@
+.header {
+    position: relative;
+    width: 100%;
+    margin-top: -7rem;
+    background-color: $color-black;
+    // z-index: 10;
+
+    @include responsive(change-menu) {
+        height: 100vh;
+    }
+
+    &__text-box {
+        display: block;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+
+        @include responsive(short) {
+            top: 50%;
+        }
+
+        @include responsive(shorter) {
+            top: 25rem;
+        }
+    }
+
+    &__img {
+        margin-top: 2rem;
+        width: 90%;
+
+        @include responsive(shorter) {
+            width: 50%;
+        }
+    }
+
+    &__title-lower {
+        position: absolute;
+        bottom: 18%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include responsive(short) {
+            bottom: 0;
+        }
+    }
+}

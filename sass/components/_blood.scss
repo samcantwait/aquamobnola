@@ -1,0 +1,46 @@
+.bloody {
+    position: absolute;
+    top: 0rem;
+    width: 100%;
+
+    @include responsive(change-menu) {
+        top: 0;
+    }
+
+    &__filter {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__canvas {
+        position: absolute;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        filter: blur(1px) contrast(1.6);
+        background-color: $color-black;
+    }
+
+    &__stop {
+        opacity: 0;
+        z-index: 3000;
+        position: absolute;
+        font-size: 1.6rem;
+        bottom: 2rem;
+        right: 2rem;
+        padding: 2rem;
+        color: white;
+        border: 2px solid rgba($color-white, 0.7);
+        background-color: rgba($color-red-light, .7);
+        border-radius: 1000px;
+        animation: makeVisible 1s 15s forwards;
+
+        @include responsive(change-menu) {
+            bottom: -3rem;
+            left: 1rem;
+            right: auto;
+        }
+    }
+}

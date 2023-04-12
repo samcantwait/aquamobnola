@@ -1,0 +1,35 @@
+.grid {
+    display: grid;
+    gap: $gutter;
+    margin: 0 auto;
+    max-width: $grid-width;
+    align-items: center;
+
+    &--col-2 {
+        grid-template-columns: 1fr 1fr;
+
+
+        &>:first-child {
+            margin-left: $gutter;
+
+            @include responsive(tab-port) {
+                margin-left: 0;
+            }
+        }
+
+        &>:last-child {
+            margin-right: $gutter;
+
+            @include responsive(tab-port) {
+                margin-right: 0;
+            }
+        }
+
+
+        @include responsive(tab-port) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            max-width: 75%;
+        }
+    }
+}

@@ -1,0 +1,143 @@
+.happenings {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+
+    &__intro {
+        display: block;
+        text-align: center;
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        font-size: 3.5rem;
+        background-color: $color-grey-light;
+        color: $color-white;
+        border: none;
+
+        &--left {
+            left: calc(14% - 6rem);
+        }
+
+        &--right {
+            right: calc(14% - 6rem);
+        }
+
+        @include responsive(phone) {
+            display: none;
+        }
+    }
+
+    &__container {
+        max-width: 72%;
+        height: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        overflow: hidden;
+        margin: auto;
+        position: relative;
+
+        @include responsive(phone) {
+            flex-wrap: wrap;
+            width: 90%;
+        }
+    }
+
+    &__event {
+        display: inline-block;
+        // flex: 1 0 25%;
+        border-left: 2px solid currentColor;
+
+        &--1 {
+            color: $color-red;
+        }
+
+        &--2 {
+            color: $color-blue;
+        }
+
+        &--3 {
+            color: $color-purple;
+        }
+
+        &--4 {
+            color: $color-orange;
+        }
+
+        &--5 {
+            color: $color-green;
+        }
+
+        @include responsive(phone) {
+            width: 100%;
+        }
+    }
+
+    &__date {
+        color: currentColor;
+        display: inline-block;
+
+        &--day {
+            float: left;
+            font-size: 5rem;
+            font-weight: 300;
+            padding-left: 1rem;
+
+            @include responsive(phone) {
+                font-size: 3rem;
+            }
+        }
+
+        &--year {
+            display: inline-block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            width: 10rem;
+            padding: 1rem;
+
+            @include responsive(phone) {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &__image-container {
+        width: 100%;
+
+        @include responsive(phone) {
+            display: none;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        border-top: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        color: $grey-font;
+        font-family: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        padding: 1rem;
+    }
+
+    &__heading {
+        display: inline-block;
+        margin-right: 2rem;
+
+    }
+
+    &__footer {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 200;
+    }
+}

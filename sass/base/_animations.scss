@@ -1,0 +1,19 @@
+@keyframes makeVisible {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes borderVisible {
+    0% {
+        border-bottom: 4px solid transparent;
+    }
+
+    100% {
+        border-bottom: 4px solid $color-red-blood;
+    }
+}

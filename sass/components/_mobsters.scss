@@ -1,0 +1,94 @@
+.cast {
+    width: 75%;
+    margin: auto;
+    min-height: 22rem;
+    padding: 2rem;
+    box-shadow: 3px 3px 10px -4px rgba($color-white, .8);
+    background-color: rgba($color-black, .6);
+    transform: skewX(-12deg);
+    position: relative;
+    z-index: 5;
+    transition: transform 2s;
+
+    &:nth-child(odd) {
+        transform: skew(-12deg) translateX(-100vw);
+
+        @include responsive(cast) {
+            transform: translateX(-100vw) skew(0);
+        }
+    }
+
+    &:nth-child(even) {
+        transform: skew(-12deg) translateX(100vw);
+
+        @include responsive(cast) {
+            transform: translateX(100vw) skew(0);
+        }
+    }
+
+    &>* {
+        transform: skewX(12deg);
+
+        @include responsive(cast) {
+            transform: skew(0);
+        }
+    }
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        margin: 2rem;
+        float: left;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        shape-outside: circle(48.3%);
+        transform: translateX(-1rem) skewX(12deg);
+
+        @include responsive(cast) {
+            transform: translateX(-1rem) skew(0);
+        }
+
+        @include responsive(small-phone) {
+            transform: translateX(-1rem) skew(0);
+            float: none;
+        }
+    }
+
+    &__img {
+        height: 15rem;
+        width: 15rem;
+        object-position: top center;
+        transform: scale(1.2);
+        transition: all .5s;
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 55%;
+        font-size: 2.3rem;
+        font-weight: 400;
+        transform: translate(-50%, 20%);
+        opacity: 0;
+        transition: all .5s;
+    }
+
+    &:hover &__img {
+        transform: scale(1.6);
+        filter: blur(3px) brightness(80%);
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &__text {
+        font-size: 1.6rem;
+    }
+
+    @include responsive(cast) {
+        transform: translateX(0) skew(0);
+    }
+}

@@ -1,0 +1,132 @@
+.contact {
+    margin-top: -40vh;
+    padding: calc(40vh + 10rem) 10% 10% 10%;
+    background-color: $color-black;
+
+    @include responsive(cast) {
+        padding: calc(40vh + 10rem) 0 0 0;
+    }
+
+    &__container {
+        position: relative;
+        width: 80%;
+        background-color: $color-white;
+        color: $color-black;
+        border: .8rem solid $color-black;
+        border-radius: 2rem;
+        margin: auto;
+        display: block;
+
+        @include responsive(cast) {
+            width: 90%;
+        }
+    }
+
+    &__image {
+        padding: 2rem;
+        width: 100%;
+
+        &--container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 15rem;
+            height: 15rem;
+            border-radius: 50%;
+            border: .3rem solid $color-grey-light;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $color-white;
+            transform: translate(-50%, -50%);
+
+            @include responsive(change-menu) {
+                width: 12rem;
+                height: 12rem;
+            }
+
+            @include responsive(phone) {
+                width: 10rem;
+                height: 10rem;
+            }
+        }
+    }
+
+    &__heading {
+        color: currentColor;
+        text-align: center;
+        padding-top: 8rem;
+
+        @include responsive(cast) {
+            font-size: 2.5rem;
+        }
+
+        @include responsive(phone) {
+            font-size: 2rem;
+        }
+    }
+
+    &__form {
+        width: 80%;
+        margin: 5rem auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+
+        @include responsive(cast) {
+            width: 90%;
+        }
+    }
+
+    &__input {
+        padding: 1rem;
+        font-family: 'Libre Franklin', sans-serif;
+        letter-spacing: 1px;
+        font-size: 1.5rem;
+        font-weight: 400;
+
+        &--name,
+        &--email {
+            width: 50%;
+
+            @include responsive(change-menu) {
+                width: 100%;
+            }
+        }
+
+        &--text {
+            width: 100%;
+        }
+    }
+
+    &__col {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 1.3rem;
+
+        @include responsive(change-menu) {
+            flex-direction: column;
+        }
+    }
+
+    &__button {
+        margin: 1.3rem;
+        padding: 1.2rem 3rem;
+        align-self: flex-end;
+        background-color: rgba($color-red-blood, .9);
+        border: none;
+        color: $color-white;
+        letter-spacing: 1px;
+
+        &:hover,
+        &:focus {
+            transform: translateY(-1px);
+            box-shadow: 2px 2px 2px $color-black;
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+    }
+}

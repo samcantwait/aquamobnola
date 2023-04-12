@@ -1,0 +1,71 @@
+:root {
+    --columns: 4;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    vertical-align: baseline;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* Include media queries for font size here */
+
+    @include responsive(phone) {
+        font-size: 15%;
+    }
+
+    @include responsive(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include responsive(tab-port) {
+        font-size: 50%;
+    }
+
+    @include responsive(big-desktop) {
+        font-size: 75%;
+    }
+
+    @include responsive(shorter) {
+        font-size: 50%;
+    }
+
+    @include responsive(too-short) {
+        font-size: 40%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+    background-color: $color-black;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a,
+a:active,
+a:hover,
+a:visited {
+    text-decoration: none;
+    color: $color-white;
+}
