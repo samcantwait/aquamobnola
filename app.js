@@ -46,7 +46,7 @@ app.post("/contact", async (req, res) => {
     res.redirect('/');
 })
 
-app.get('/gallery/', async (req, res) => {
+app.get('/gallery/', (req, res) => {
     let show = req.query.show ? req.query.show : false;
     let name = req.query.name;
     connection.query('SELECT name FROM photographers;', (error, results, fields) => {
@@ -79,10 +79,10 @@ app.get('/gallery/', async (req, res) => {
                 WHERE ${show ? 'show_id' : 'photographer_id'} = 
                     (
                         SELECT id FROM ${show ? 'shows' : 'photographers'} 
-                        WHERE name = '${name}'
+                        WHERE name = ?
                     );`
 
-            connection.query(query, (error, results, fields) => {
+            connection.query(query, [name], (error, results, fields) => {
                 if (error) throw error;
                 res.render('pages/gallery', { results, allShows, allPhotographers, name, show })
             })
@@ -90,7 +90,7 @@ app.get('/gallery/', async (req, res) => {
     })
 })
 
-app.post("/gallery", async (req, res) => {
+app.post("/gallery", (req, res) => {
     res.redirect(`/gallery/?${req.body.sort}`);
 })
 

@@ -11,13 +11,13 @@
                 <label for="sort-select" class="main-gallery__label">View photos by: </label>
                 <select name="sort" id="sort-select" class="main-gallery__select" required>
                     <option value="name=all" class="main-gallery__option">All photos</option>
-                    <option value="" class="main-gallery__option main-gallery__option-title">Show</option>
+                    <option value="" class="main-gallery__option main-gallery__option-title">Show-------</option>
                     <% allShows.forEach(show=> { %>
                         <option value="show=true&name=<%= show.name %>" class="main-gallery__option">
                             <%= show.full_name %>
                         </option>
                         <% }) %>
-                        <option value="" class="main-gallery__option main-gallery__option-title">Photographer
+                        <option value="" class="main-gallery__option main-gallery__option-title">Photographer------
                         </option>
                         <% allPhotographers.forEach(photographer=> { %>
                             <option value="name=<%= photographer.name.toLowerCase() %>" class="main-gallery__option">
