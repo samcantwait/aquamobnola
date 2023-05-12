@@ -44,9 +44,7 @@ export const observer = () => {
 
     const grow = (entries, castObserver) => {
         entries.forEach(entry => {
-            console.log('before observe')
             if (entry.isIntersecting) {
-                console.log('in observe')
                 checkWidth();
                 castObserver.unobserve(entry.target);
             }
@@ -65,12 +63,10 @@ export const observer = () => {
     const checkWidth = () => {
         if (window.innerWidth <= 512) {
             castMembers.forEach(member => {
-                console.log('in mobile')
                 member.style.transform = 'skew(0) translateX(0)';
             })
         } else {
             castMembers.forEach(member => {
-                console.log('in larger')
                 member.style.transform = 'skew(-12deg) translateX(0)';
             })
         }

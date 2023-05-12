@@ -8,8 +8,8 @@ const path = require('path');
 const app = express();
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    // user: 'sam',
+    // host: 'localhost',
+    user: 'sam',
     user: 'root',
     password: process.env.PASS_MYSQL,
     database: 'aquamobnola_db'
@@ -69,8 +69,6 @@ app.get('/gallery/', (req, res) => {
                 show = false;
                 name = 'all';
             }
-
-
 
             const query = name === 'all' ?
                 `SELECT url_350, url_600, url_2000, photographers.name, alt_text, is_long FROM photos JOIN photographers ON photos.photographer_id = photographers.id;` :

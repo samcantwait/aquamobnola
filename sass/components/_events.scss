@@ -1,0 +1,92 @@
+.events {
+    width: 80%;
+    margin: 5rem auto 0;
+    text-align: center;
+    color: $color-black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    &__box {
+        position: relative;
+        min-width: 20rem;
+        border-top: 1rem solid $color-red-blood;
+        max-width: 40rem;
+        background-color: rgba($color-white, 1);
+        margin: 0 auto 16rem;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 3px 1px rgba($color-black, 0.5);
+    }
+
+    &__topper {
+        width: 100%;
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__heading {
+        color: currentColor;
+        padding: 2rem 0;
+    }
+
+    &__date {
+        color: $color-red-blood;
+        font-weight: 600;
+        padding-bottom: 1rem;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        font-weight: 400;
+        padding: 0 3rem;
+        padding: 1rem 4.5rem 4rem;
+        margin-bottom: 10rem;
+    }
+
+    &__link {
+        color: $color-red-blood;
+
+        &:hover,
+        &:focus {
+            color: $color-orange-carrie;
+        }
+
+        &:visited {
+            color: $color-red-blood;
+        }
+    }
+
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        padding: 5rem 0;
+        width: 100%;
+        background-color: $color-orange-carrie;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    &__disclaimer,
+    &__button {
+        display: block;
+        font-size: 1.5rem;
+        color: $color-white;
+    }
+
+    &__button {
+        outline: none;
+        background-color: transparent;
+        border: none;
+        letter-spacing: .15rem;
+        line-height: 1.7rem;
+        font-weight: 200;
+        cursor: pointer;
+    }
+
+}

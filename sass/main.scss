@@ -9,9 +9,10 @@
 @import "components/bg-video";
 @import "components/blood";
 @import "components/contact";
+@import "components/events";
 @import "components/gallery";
 @import "components/happenings";
-@import "components/mobsters";
+// @import "components/mobsters";
 @import 'components/photo-grid';
 @import "components/show";
 @import "components/tickets";
@@ -20,6 +21,7 @@
 @import "layout/header";
 @import "layout/navigation";
 
+@import "pages/footer";
 @import "pages/home";
 @import "pages/main-gallery";
 @import "pages/subscribed";

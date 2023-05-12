@@ -21,13 +21,15 @@ export const tickets_modal = () => {
     body.insertAdjacentHTML('beforeend', html);
 
     const modal = document.querySelector('.tickets');
-    const openModal = document.querySelector('.tickets-link');
+    const openModal = document.querySelectorAll('.tickets-link');
     const forms = document.querySelectorAll('.index__form');
 
-    openModal.addEventListener('click', e => {
-        e.preventDefault();
-        console.log('clicked');
-        modal.style.left = '0';
+    openModal.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            console.log('clicked');
+            modal.style.left = '0';
+        })
     })
 
     modal.addEventListener('click', e => {
