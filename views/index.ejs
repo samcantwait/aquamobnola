@@ -1,4 +1,6 @@
 <% layout('layout/boilerplate')%>
+    <script src="https://www.google.com/recaptcha/api.js" async defer>
+    </script>
     <script src="/js/main.js" type="module" defer></script>
     <title>Aquamob NOLA</title>
     </head>
@@ -56,7 +58,7 @@
                                     <p class="photo-credit show__credit">Photo by Raymond Rehage</p>
                                 </div>
                                 <div class="show__photos show__photos-2">
-                                    <img srcset="/images/ripley/eli-mergel/eli-mergel-1602-225.webp 400w, /images/ripley/eli-mergel/eli-mergel-1602-600.webp 600w"
+                                    <img srcset="/images/ripley/eli-mergel/eli-mergel-1602-225.webp 400w, /images/ripley/eli-mergel/eli-mergel-1578-600.webp 600w"
                                         sizes="100%" src="images/eli-mergel-pool-shot-med.webp"
                                         alt="swimmers in the pool" class="show__photo" />
                                     <p class="photo-credit show__credit">Photo by Eli Mergel</p>
@@ -82,10 +84,8 @@
                     <h2 class="heading-secondary mt-large">Announcements</h2>
                 </div>
                 <div class="events">
-                    <div class="events__box">
+                    <!-- <div class="events__box">
                         <div class="events__topper">
-                            <!-- <img src="/images/ripley/eli-mergel/eli-mergel-1602-2000.webp"
-                                alt="an audience watching the show" class="events__image"> -->
                             <img src="/images/ripley/brian-boudreaux/brian-boudreaux-69-2000.webp"
                                 alt="a women standing by a table laughing" class="events__image">
                         </div>
@@ -98,7 +98,7 @@
                         </p>
                         <div class="events__footer"><span class="events__disclaimer">Discount
                                 code forthcoming!</span></div>
-                    </div>
+                    </div> -->
                     <div class="events__box">
                         <div class="events__topper">
                             <img src="/images/ripley/eli-mergel/eli-mergel-1602-2000.webp"
@@ -116,92 +116,6 @@
                                     class="tickets-link events__button">Subscribe</button></span></div>
                     </div>
                 </div>
-                <!-- <div class="mobsters__cast">
-                    <div class="cast mb-large">
-                        <figure class="cast__shape">
-                            <img src="/images/female-profile.webp" alt="Avatar" class="cast__img">
-                            <figcaption class="cast__caption">Jane Doe</figcaption>
-                        </figure>
-                        <div class="cast__text">
-                            <h3 class="heading-tertiary">Cast Member</h3>
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, ea neque? Praesentium
-                                asperiores
-                                quam consequuntur expedita laborum consectetur, officia eum maxime omnis ipsa veniam
-                                minima
-                                quibusdam ratione libero, velit eveniet!
-                                Commodi corporis fugiat soluta sint quisquam magnam. Hic asperiores tempora laboriosam
-                                quibusdam
-                                inventore accusamus ut sapiente itaque. Esse accusamus quidem quos in quas laboriosam
-                                consectetur et consequatur tenetur? Porro, nemo?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="cast mb-large">
-                        <figure class="cast__shape">
-                            <img src="/images/female-profile3.webp" alt="Avatar" class="cast__img">
-                            <figcaption class="cast__caption">Jane Doe</figcaption>
-                        </figure>
-                        <div class="cast__text">
-                            <h3 class="heading-tertiary">Dancer</h3>
-                            <p>
-                                Quia sunt ipsum accusamus cupiditate dicta illo labore at distinctio! Consequatur quam
-                                aperiam
-                                aliquam eligendi est culpa repellat hic rem, quod dolor dolorum commodi alias, nemo
-                                dicta
-                                saepe
-                                deserunt quidem.
-                                Earum, veniam ex maiores ratione provident eos dolor velit atque aspernatur nemo dolorem
-                                harum,
-                                ipsum reiciendis modi, repellendus at cumque quia corporis adipisci sapiente fugit. Nisi
-                                aspernatur illo ea natus?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="cast mb-large">
-                        <figure class="cast__shape">
-                            <img src="/images/female-profile2.webp" alt="Avatar" class="cast__img">
-                            <figcaption class="cast__caption">Jane Doe</figcaption>
-                        </figure>
-                        <div class="cast__text">
-                            <h3 class="heading-tertiary">Tech Team</h3>
-                            <p>
-                                Quia sunt ipsum accusamus cupiditate dicta illo labore at distinctio! Consequatur quam
-                                aperiam
-                                aliquam eligendi est culpa repellat hic rem, quod dolor dolorum commodi alias, nemo
-                                dicta
-                                saepe
-                                deserunt quidem.
-                                Earum, veniam ex maiores ratione provident eos dolor velit atque aspernatur nemo dolorem
-                                harum,
-                                ipsum reiciendis modi, repellendus at cumque quia corporis adipisci sapiente fugit. Nisi
-                                aspernatur illo ea natus?
-                            </p>
-                        </div>
-                    </div>
-                    <div class="cast mb-large">
-                        <figure class="cast__shape">
-                            <img src="/images/male-profile.webp" alt="Avatar" class="cast__img">
-                            <figcaption class="cast__caption">John Doe</figcaption>
-                        </figure>
-                        <div class="cast__text">
-                            <h3 class="heading-tertiary">Design Team</h3>
-                            <p>
-                                Quia, dolorem. Praesentium voluptatum, nulla iure nisi sequi, qui consequuntur inventore
-                                atque
-                                voluptate cum, saepe quia mollitia blanditiis placeat corporis sit illo consequatur
-                                fuga!
-                                Asperiores commodi quidem possimus tempora totam!
-                                Accusamus doloribus quaerat ducimus accusantium blanditiis sint, soluta consequatur? Ea
-                                voluptatum aliquam magnam necessitatibus expedita perferendis minus consectetur delectus
-                                quam,
-                                alias dignissimos, iure sed quo et enim deserunt deleniti voluptatibus?
-                            </p>
-                        </div>
-                    </div>
-                    <a class="btn-more center-text mb-large extra-padding">View the rest of the cast and crew &rarr;
-                        &#40;inactive link&#41; </a>
-                </div> -->
             </section>
             <div class="section-wrapper">
                 <section id="gallery" class="section-backdrop gallery rotate">
@@ -477,8 +391,10 @@
                         </div>
                         <div class="contact__col">
                             <textarea name="message" id="message" class="contact__input contact__input--text" cols="30"
-                                rows="10" placeholder="Enter your message here."></textarea>
+                                rows="10" placeholder="Enter your message here." required></textarea>
                         </div>
+                        <div class="g-recaptcha" data-sitekey='<%= sitekey %>'></div>
+                        <p class="captcha-msg"></p>
                         <button class="contact__button submit--btn" type="submit">Send</button>
                     </form>
                 </div>

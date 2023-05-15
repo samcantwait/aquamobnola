@@ -4,15 +4,21 @@ const mail = require('./app/mail');
 const ejsMate = require('ejs-mate');
 const mysql = require('mysql');
 const path = require('path');
-
+const https = require('https');
 const app = express();
 
 const connection = mysql.createConnection({
-    // host: 'localhost',
+    // FOR DEVELOPMENT
     user: 'sam',
     user: 'root',
     password: process.env.PASS_MYSQL,
     database: 'aquamobnola_db'
+
+    ///// FOR PRODUCTION
+    // host: 'localhost',
+    // user: 'samcan6_sam',
+    // password: process.env.PASS_MYSQL,
+    // database: 'samcan6_aquamobnola_db',
 });
 
 connection.connect(function (err) {
@@ -33,13 +39,45 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
-    res.render('index');
+    res.render('index', { sitekey: `${process.env.SITEKEY_LOCAL}` });
 });
 
 app.post("/subscribe", async (req, res) => {
     const message = await mail.subscribe(req.body.email).catch(e => { console.log(e) });
     res.render('pages/subscribed', { email: req.body.email })
 });
+
+app.post("/check-form", async (req, res) => {
+    if (req.body.captcha === undefined ||
+        req.body.captcha === '' ||
+        req.body.captcha === null) {
+        return res.json({ msg: false });
+    }
+    const secretKey = process.env.SECRET_KEY_LOCAL;
+    const verifyURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}`;
+
+    https.get(verifyURL, (response) => {
+        let data = '';
+        response.on('data', chunk => {
+            data += chunk;
+        })
+
+        response.on('end', () => {
+            data = JSON.parse(data)
+            return res.json({ msg: data });
+        })
+    }).on('error', err => {
+        console.error('there was an error siily')
+    })
+
+    // const result = await fetch(verifyURL, {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    // }).then(res => res.json())
+    // return res.json({ msg: result.success })
+})
 
 app.post("/contact", async (req, res) => {
     await mail.info(req.body).catch(e => { console.log(e) });
