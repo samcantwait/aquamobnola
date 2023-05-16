@@ -16,10 +16,10 @@ export async function reCaptcha() {
             body: JSON.stringify({ captcha })
         }).then(res => res.json()).then(data => {
             console.log(data.msg)
-            // if (data.msg) this.submit();
-            // else {
-            //     captchaMsg.innerText = "Please check the captcha."
-            // }
+            if (data.msg) this.submit();
+            else {
+                captchaMsg.innerText = "Please check the captcha."
+            }
         })
     }
 }
