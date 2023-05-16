@@ -5,6 +5,7 @@ const ejsMate = require('ejs-mate');
 const mysql = require('mysql');
 const path = require('path');
 const https = require('https');
+const { v4: uuidv4 } = require('uuid');
 const app = express();
 
 const connection = mysql.createConnection({
@@ -43,6 +44,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/subscribe", async (req, res) => {
+    const email = req.body.email;
+    const query = `INSERT INTO emails (email, uuid) VALUES (?, ?)`;
+    connection.query(query, [email, uuidv4()]);
     const message = await mail.subscribe(req.body.email).catch(e => { console.log(e) });
     res.render('pages/subscribed', { email: req.body.email })
 });
